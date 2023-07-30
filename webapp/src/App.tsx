@@ -9,6 +9,7 @@ import img from "./assets/Images/pageBack.jpg";
 import ProjectHome from "./Home-page/Project-Page/Project-Home";
 import projecObject from "./Home-page/Project-Page/Project-Object";
 import HomeApp from "./Home-page/components/Home-App";
+import ExpenseTable from "./ExpenseTraker/components/ExpenseTable";
 
 
 function App() {
@@ -51,7 +52,8 @@ function App() {
             path="project" //
             element={<ProjectHome projectItems={projecObject} />}
           />
-            <Route path="gamehub" element={<GameApp />} />
+          <Route path="gamehub" element={<GameApp />} />
+          <Route path="expenseTracker" element={<ExpenseTable />} />
         </Routes>
       </GridItem>
     </Grid>
