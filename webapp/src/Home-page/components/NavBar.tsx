@@ -3,7 +3,6 @@ import {
   HStack,
   Heading,
   Icon,
-  Image,
   ListItem,
   Show,
   Spacer,
@@ -14,7 +13,7 @@ import {
 import { useState } from "react";
 import { IconType } from "react-icons";
 import { Link } from "react-router-dom";
-import logo from '../../assets/mylogo.png'
+
 export interface nav {
   tooltip: string;
   icon: IconType;
@@ -34,7 +33,6 @@ const NavBar = ({ navbar, onClick }: props) => {
     <HStack>
       {/* <Show above="lg"> */}
       <HStack>
-        <Image src={logo} w={"100px"} marginLeft={"20px"} borderRadius={5} />
       <Heading fontSize={"2xl"} color={"white"} marginLeft={"50px"}>
 
         Andrew samuel Tamaraprebi
