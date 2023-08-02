@@ -36,7 +36,7 @@ function MobileNav({ navbar }: props) {
 
   return (
     <HStack p={"10px"} bgImage={pic}>
-      <Image src={logo} w={150} borderRadius={10} />
+      <Heading fontSize={20} color={"white"} marginLeft={20}>Andrew samuel T.</Heading>
 
       <Spacer />
       <Icon as={ikon} color="white" onClick={onOpen} boxSize={"50px"} />
