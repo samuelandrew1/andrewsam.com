@@ -1,26 +1,50 @@
-import { useState } from "react"
+import { SetStateAction, useState } from "react"
 import ExpenseTable from "./ExpenseTable"
-import tableObject from "./TableObject"
+import ExpenseForm from "./ExpenseForm"
+import categories from "./Categories"
+import tableObject, { tableProps } from "./TableObject"
+import ExpenseFilter from "./ExpenseFilter"
+import ExpenseHeader from "./ExpenseHeader"
+import KeyFeatures from "./KeyFeatures"
 
 
 const ExpenseApp = () => {
     const [table, setTable] = useState(tableObject)
-    // const [lock, setLock] = useState(true)
+    const [selectCategory, setSelectCategory] = useState('')
     // delete data in the table
     const lock = true
     const handleDelete = (id: number) => {
         setTable(table.filter((e) => e.id !== id))
     }
-    const handleLock = () => {
-        setLock(false);
+    // submit form data to the table
+    const handleSubmit = (newExpense: tableProps) => {
+        setTable([...table, { ...newExpense, id: table.length + 1 }])
     }
 
+    // this function handles filter change
+    const handleFilter = (e: SetStateAction<string>) => {
+        setSelectCategory(e)
+    }
+
+    const handleSelectedCategory = (category: SetStateAction<string>) => {
+        setSelectCategory(category)
+    }
+    const filteredExpenses = selectCategory ? table.filter(e => e.category === selectCategory) : table
     return (
+        <>
+            <ExpenseHeader />
+            <ExpenseFilter onItemFilter={categories} onFilter={handleFilter} />
         <ExpenseTable lock={lock}
-            tableDatas={table}
+                tableDatas={filteredExpenses}
             onDelete={handleDelete}
-            onLock={handleLock}
-        />
+
+            />
+            <ExpenseForm onsubmit={handleSubmit}
+                category={categories}
+                onSelect={handleSelectedCategory}
+            />
+            <KeyFeatures />
+        </>
     )
 }
 export default ExpenseApp

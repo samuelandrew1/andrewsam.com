@@ -3,8 +3,7 @@ export interface tableProps {
     id: number,
     amount: number,
     category: string,
-    itemDescription: string
-    serialNo: number
+    Description: string
 
 }
 
@@ -14,16 +13,15 @@ const tableObject: tableProps[] = [
         id: 1,
         amount: 200,
         category: "food items",
-        itemDescription: "a bag of rice",
-        serialNo: 1
+        Description: "a bag of rice",
     },
     {
         date: "2/8/2023",
         id: 2,
         amount: 200,
         category: "food items",
-        itemDescription: "a bag of beans",
-        serialNo: 2
+        Description: "a bag of beans",
     }
 ]
 export default tableObject
+

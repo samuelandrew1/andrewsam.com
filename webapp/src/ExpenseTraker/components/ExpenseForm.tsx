@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 interface formDataProps {
-    onsubmit: (id: formDataProps) => void
+    onsubmit: (para: ExpenseFormData) => void
     onSelect: (param: string) => void
     category: Array<string>
 
@@ -20,7 +20,7 @@ const schema = z.object({
 type ExpenseFormData = z.infer<typeof schema>
 
 const ExpenseForm = ({ onsubmit, onSelect, category }: formDataProps) => {
-    const { register, handleSubmit, } = useForm<ExpenseFormData>()
+    const { register, handleSubmit, reset } = useForm<ExpenseFormData>()
     const [dateError, setDateError] = useState('')
     const [amountError, setAmountError] = useState('')
 
@@ -28,9 +28,16 @@ const ExpenseForm = ({ onsubmit, onSelect, category }: formDataProps) => {
     const isAmountError = amountError === ''
     const isdateError = dateError === ''
     return (
-        <Box m={"auto"} w={"60%"}>
+        <Box m={"auto"} w={"60%"} marginTop={"50px"}>
 
-            <form onSubmit={handleSubmit(onsubmit)}>
+            {/*eslint-disable-next-line @typescript-eslint/no-misused-promises */}
+            <form onSubmit={handleSubmit((data) => {
+                onsubmit(data)
+                reset()
+            })}
+            >
+
+
                 <FormControl isInvalid={isdateError} id="date" >
                     <FormLabel htmlFor="date" >date</FormLabel>
                     <FormHelperText>the date the cash was spent</FormHelperText>
@@ -68,6 +75,7 @@ const ExpenseForm = ({ onsubmit, onSelect, category }: formDataProps) => {
                 </FormControl>
                 <Button type='submit' >submit</Button>
             </form>
+
         </Box>
     )
 

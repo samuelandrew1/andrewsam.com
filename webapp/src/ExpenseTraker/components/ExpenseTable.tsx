@@ -10,7 +10,7 @@ interface itemProps {
     lock: boolean
 }
 const tableHeader = [
-    'Date', 'amount', 'category', 'item description', 'Action'
+    'Date', 'amount', 'category', 'Description', 'Action'
 ]
 
 const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
@@ -43,11 +43,11 @@ const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
                 </Thead>
                     <Tbody>
                         {tableDatas.map(items =>
-                            <Tr key={items.id}>
+                            <Tr key={items.date}>
                                 <Td scope="row" color={"whiteAlpha.800"} >{items.date}</Td>
                                 <Td scope="row" color={"whiteAlpha.800"}>{items.amount}</Td>
                                 <Td scope="row" color={"whiteAlpha.800"}>{items.category}</Td>
-                                <Td scope="row" color={"whiteAlpha.800"}>{items.itemDescription}</Td>
+                                <Td scope="row" color={"whiteAlpha.800"}>{items.Description}</Td>
                                 <Td>
                                     {lock &&
                                         <Popover>
@@ -80,8 +80,8 @@ const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
                     <Tfoot>
                         <Tr>
                             <Td color={"whiteAlpha.800"}>Total</Td>
+                            <Td color={"whiteAlpha.800"}> N {tableDatas.reduce((acc, price) => acc + price.amount, 0)}</Td>
                             <Td color={"whiteAlpha.800"}></Td>
-                            <Td color={"whiteAlpha.800"}>{tableDatas.reduce((acc, price) => acc + price.amount, 0)}</Td>
                             <Td>
 
                                 {lock && <Button colorScheme='blue' leftIcon={<FaUnlockAlt />} onClick={handleLock} />}
