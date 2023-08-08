@@ -9,10 +9,12 @@ interface formDataProps {
     onSelect: (param: string) => void
     category: Array<string>
 
+
 }
 
 const schema = z.object({
-    date: z.date(),
+    date: z.string(),
+    id: z.number(), 
     amount: z.number().min(0.01).max(100_000_000),
     category: z.string().min(3),
     Description: z.string().min(5, { message: "please enter at least 5 characters" })
@@ -73,7 +75,7 @@ const ExpenseForm = ({ onsubmit, onSelect, category }: formDataProps) => {
                     <Input {...register("Description")} />
                     <FormErrorMessage>you have described the item</FormErrorMessage>
                 </FormControl>
-                <Button type='submit' >submit</Button>
+                <Button type='submit' m={5} >submit</Button>
             </form>
 
         </Box>

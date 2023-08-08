@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr, useDisclosure } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr, } from "@chakra-ui/react"
 import { tableProps } from "./TableObject"
 import { RiDeleteBin6Fill } from 'react-icons/ri'
 import { FaUnlockAlt, FaLock } from 'react-icons/fa'
