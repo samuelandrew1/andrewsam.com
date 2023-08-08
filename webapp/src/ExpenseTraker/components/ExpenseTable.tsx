@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, HStack, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr, useDisclosure } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr, useDisclosure } from "@chakra-ui/react"
 import { tableProps } from "./TableObject"
 import { RiDeleteBin6Fill } from 'react-icons/ri'
 import { FaUnlockAlt, FaLock } from 'react-icons/fa'
@@ -10,7 +10,7 @@ interface itemProps {
     lock: boolean
 }
 const tableHeader = [
-    'S/No.', 'Date', 'amount', 'category', 'item description', 'Action'
+    'Date', 'amount', 'category', 'item description', 'Action'
 ]
 
 const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
@@ -20,6 +20,9 @@ const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
     }
     return (
         <>
+            <Box>
+
+            </Box>
             <TableContainer
                 m={["auto",]}
                 p={5}
@@ -41,7 +44,6 @@ const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
                     <Tbody>
                         {tableDatas.map(items =>
                             <Tr key={items.id}>
-                                <Td scope="row" color={"whiteAlpha.800"}>{items.serialNo}</Td>
                                 <Td scope="row" color={"whiteAlpha.800"} >{items.date}</Td>
                                 <Td scope="row" color={"whiteAlpha.800"}>{items.amount}</Td>
                                 <Td scope="row" color={"whiteAlpha.800"}>{items.category}</Td>
