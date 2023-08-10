@@ -11,6 +11,9 @@ import KeyFeatures from "./KeyFeatures"
 const ExpenseApp = () => {
     const [table, setTable] = useState(tableObject)
     const [selectCategory, setSelectCategory] = useState('')
+    const [serialNo, setSerialNo] = useState(0)
+
+
     // delete data in the table
     const lock = true
     const handleDelete = (id: number) => {
@@ -29,15 +32,16 @@ const ExpenseApp = () => {
     const handleSelectedCategory = (category: SetStateAction<string>) => {
         setSelectCategory(category)
     }
+
     const filteredExpenses = selectCategory ? table.filter(e => e.category === selectCategory) : table
+
     return (
         <>
             <ExpenseHeader />
             <ExpenseFilter onItemFilter={categories} onFilter={handleFilter} />
         <ExpenseTable lock={lock}
                 tableDatas={filteredExpenses}
-            onDelete={handleDelete}
-
+                onDelete={handleDelete}
             />
             <ExpenseForm onsubmit={handleSubmit}
                 category={categories}
