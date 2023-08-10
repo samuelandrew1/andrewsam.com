@@ -6,7 +6,7 @@ interface props {
 }
 const ExpenseFilter = ({ onFilter, onItemFilter }: props) => {
     return (
-        <Select onChange={(e) => onFilter(e.target.value)} maxW={"70%"} m={"auto"} marginTop={"100px"} marginBottom={"30px"}>
+        <Select placeholder={"choose category"} onChange={(e) => onFilter(e.target.value)} maxW={"70%"} m={"auto"} marginTop={"100px"} marginBottom={"30px"}>
             <option value={""}>All Categories</option>
             {onItemFilter.map(items => <option key={items} value={items}>{items}</option>)}
         </Select>

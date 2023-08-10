@@ -7,10 +7,10 @@ import { useState } from "react"
 interface itemProps {
     tableDatas: tableProps[]
     onDelete: (id: number) => void
-    lock: boolean
+    lock: boolean,
 }
 const tableHeader = [
-    'Date', 'amount', 'category', 'Description', 'Action'
+    'S/No.', 'Date', 'amount', 'category', 'Description', 'Action'
 ]
 
 const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
@@ -18,6 +18,7 @@ const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
     const handleLock = () => {
         setLock(!lock)
     }
+
     return (
         <>
             <Box>
@@ -42,13 +43,14 @@ const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
                     </Tr>
                 </Thead>
                     <Tbody>
-                        {tableDatas.map(items =>
+                        {tableDatas.map((items, index) => 
                             <Tr key={items.date}>
-                                <Td scope="row" color={"whiteAlpha.800"} >{items.date}</Td>
-                                <Td scope="row" color={"whiteAlpha.800"}>{items.amount}</Td>
+                                <Td scope="row" color={"whiteAlpha.800"} >{index + 1}</Td>
+                                <Td scope="row" color={"whiteAlpha.800"} >{(items.date)}</Td>
+                                <Td scope="row" color={"whiteAlpha.800"}>N {new Intl.NumberFormat().format(items.amount)}</Td>
                                 <Td scope="row" color={"whiteAlpha.800"}>{items.category}</Td>
                                 <Td scope="row" color={"whiteAlpha.800"}>{items.Description}</Td>
-                                <Td>
+                                {items.date && <Td>
                                     {lock &&
                                         <Popover>
                                             <PopoverTrigger>
@@ -64,7 +66,6 @@ const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
                                                         <Button variant='outline'>Cancel</Button>
                                                         <Button colorScheme='red' onClick={() => onDelete(items.id)}>Apply</Button>
                                                     </ButtonGroup>
-
                                                 </PopoverFooter>
                                             </PopoverContent>
                                         </Popover>}
@@ -74,13 +75,14 @@ const ExpenseTable = ({ tableDatas, onDelete, }: itemProps) => {
 
                                     }
 
-                                </Td>
+                                </Td>}
                             </Tr>)}
                     </Tbody>
                     <Tfoot>
                         <Tr>
                             <Td color={"whiteAlpha.800"}>Total</Td>
-                            <Td color={"whiteAlpha.800"}> N {tableDatas.reduce((acc, price) => acc + price.amount, 0)}</Td>
+                            <Td color={"whiteAlpha.800"}></Td>
+                            <Td color={"whiteAlpha.800"}> N {new Intl.NumberFormat().format(tableDatas.reduce((acc, price) => acc + price.amount, 0))}</Td>
                             <Td color={"whiteAlpha.800"}></Td>
                             <Td>
 
