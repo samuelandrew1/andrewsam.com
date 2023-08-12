@@ -2,6 +2,7 @@ import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 import GameGrid from "./GameGrid";
 import { Outlet } from "react-router-dom";
+import Generes from "./Generes";
 
 
 const GameApp = () => {
@@ -14,7 +15,7 @@ const GameApp = () => {
       {/* side bar */}
       <Show above="lg">
         <GridItem area="side">
-side
+          <Generes />
         </GridItem>
       </Show>
       {/* main page */}
