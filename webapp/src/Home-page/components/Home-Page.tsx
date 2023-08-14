@@ -1,18 +1,22 @@
-import { Box, Center, Grid, GridItem, Image, Text, } from "@chakra-ui/react"
+import { Box, Center, Flex, Grid, GridItem, Heading, Image, Text, } from "@chakra-ui/react"
 import picture from '../../assets/Images/pic.jpg'
 import MySkills from "./Skill-Object"
 import { motion } from 'framer-motion'
-
+import bgpicture from '../../assets/Images/pageBack.jpg'
 const HomePage = () => {
   return (
     <Box
       bg={"black"}
     >
       <Box >
-        <Grid templateAreas={{ base: `"img" "text"`, lg: `"img text"` }} >
-          <GridItem area={"img"}
+        <Flex backgroundImage={bgpicture} height={300} bgSize={"cover"} bgPosition={"center"} bgRepeat={"no-repeat"} justifyContent={"center"} p={2}>
+          <Center>
 
-          >
+            <Heading color={"whiteAlpha.800"}>junior software engineer</Heading>
+          </Center>
+        </Flex>
+        <Grid templateAreas={{ base: `"img" "text"`, lg: `"img text"` }} >
+          <GridItem area={"img"}>
 
             <Image src={picture}
               m={"auto"}
@@ -44,7 +48,6 @@ const HomePage = () => {
         </Center>
           </GridItem>
         </Grid>
-
       </Box>
       <MySkills />
     </Box>

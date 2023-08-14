@@ -6,12 +6,12 @@ import tableObject, { tableProps } from "./TableObject"
 import ExpenseFilter from "./ExpenseFilter"
 import ExpenseHeader from "./ExpenseHeader"
 import KeyFeatures from "./KeyFeatures"
+import { Button } from "@chakra-ui/react"
 
 
 const ExpenseApp = () => {
     const [table, setTable] = useState(tableObject)
     const [selectCategory, setSelectCategory] = useState('')
-    const [serialNo, setSerialNo] = useState(0)
 
 
     // delete data in the table
@@ -28,7 +28,6 @@ const ExpenseApp = () => {
     const handleFilter = (e: SetStateAction<string>) => {
         setSelectCategory(e)
     }
-
     const handleSelectedCategory = (category: SetStateAction<string>) => {
         setSelectCategory(category)
     }
@@ -37,6 +36,7 @@ const ExpenseApp = () => {
 
     return (
         <>
+            <Button >back</Button>
             <ExpenseHeader />
             <ExpenseFilter onItemFilter={categories} onFilter={handleFilter} />
         <ExpenseTable lock={lock}

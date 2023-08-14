@@ -49,7 +49,7 @@ const ExpenseForm = ({ onsubmit, onSelect, category }: formDataProps) => {
                 {/* amount input field */}
                 <FormControl id="amount" isRequired isInvalid={isAmountError} >
                     <FormLabel htmlFor="number">amount</FormLabel>
-                    <NumberInput max={50}>
+                    <NumberInput min={0.01}>
                         <NumberInputField {...register('amount', { valueAsNumber: true })} onChange={(e) => setAmountError(e.target.value)} />
                         <NumberInputStepper>
                             <NumberIncrementStepper />

@@ -17,7 +17,7 @@ import {
   Flex,
   ListItem,
   Text,
-  Image,
+
 
 } from "@chakra-ui/react";
 import { HiOutlineMenu } from 'react-icons/hi'
@@ -25,7 +25,6 @@ import { Link } from "react-router-dom";
 import pic from "../../assets/Images/pageBack.jpg";
 import { props } from "./NavBar";
 import { useState } from "react";
-import logo from '../../assets/mylogo.png'
 import { IconType } from "react-icons";
 
 const ikon: IconType = HiOutlineMenu
