@@ -2,7 +2,7 @@ import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 import GameGrid from "./GameGrid";
 import { Outlet } from "react-router-dom";
-import Generes from "./Generes";
+import Generes from "./GeneresList";
 
 
 const GameApp = () => {
