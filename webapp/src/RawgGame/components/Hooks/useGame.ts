@@ -15,7 +15,6 @@ export interface Game {
 
 }
 
-
 const useGame = (selectedGenres: genres_props | null, selectedPlatform: platform | null) =>
   useData<Game>('/games',
     {
