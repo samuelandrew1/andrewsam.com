@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import ApiClient from "../../Services/Api-Client";
-import { CanceledError } from "axios";
-import { ErrorResponse } from "./useGame";
+import { AxiosRequestConfig, CanceledError } from "axios";
+
 
 export interface genres_props {
     name: string
@@ -13,16 +13,22 @@ export interface fetchResData<T> {
     genres: genres_props[]
     results: T[]
 }
+export interface ErrorResponse {
+    err: () => void
+    error: string
+    message: string
 
-const useData = <T>(endpoint: string) => {
+}
+
+const useData = <T>(endpoint: string, requestCongig?: AxiosRequestConfig, dependency?: any[]) => {
     const [data, setData] = useState<T[]>([]);
-    const [error, setError] = useState<ErrorResponse | string>("");
+    const [error, setError] = useState<ErrorResponse | string | ReactNode>();
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         setLoading(true)
         const Controller = new AbortController()
-        ApiClient.get<fetchResData<T>>(endpoint, { signal: Controller.signal })
+        ApiClient.get<fetchResData<T>>(endpoint, { signal: Controller.signal, ...requestCongig })
             .then((response) => {
                 setLoading(false)
                 setData(response.data.results)
@@ -33,7 +39,7 @@ const useData = <T>(endpoint: string) => {
                 setLoading(false)
             });
         return () => Controller.abort()
-    }, []);
+    }, dependency ? [...dependency] : []);
     return { data, error, loading }
 }
 

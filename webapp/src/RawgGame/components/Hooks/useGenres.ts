@@ -1,7 +1,7 @@
 import useData from "./UseData";
 
 interface genres_props{
-    name: string
+  name: string
   id: number
   image_background: string
 }

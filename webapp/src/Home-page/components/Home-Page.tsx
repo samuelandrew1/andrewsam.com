@@ -15,12 +15,12 @@ const HomePage = () => {
             <Heading color={"whiteAlpha.800"}>junior software engineer</Heading>
           </Center>
         </Flex>
-        <Grid templateAreas={{ base: `"img" "text"`, lg: `"img text"` }} >
+        <Grid templateAreas={{ base: `"img" "text"`, lg: `"img text"` }} bgImage={bgpicture}>
           <GridItem area={"img"}>
 
             <Image src={picture}
               m={"auto"}
-              w={{ base: "70%", lg: "100%" }}
+              w={{ base: "90%", lg: "100%" }}
               p={5}
               borderRadius={"3xl"}
               overflow={"hidden"} />
