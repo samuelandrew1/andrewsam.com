@@ -1,6 +1,7 @@
 import {
   Card,
   CardBody,
+  CardFooter,
   CardHeader,
   HStack,
   Heading,
@@ -10,27 +11,34 @@ import {
 import useGame, { Game } from "./Hooks/useGame";
 import { Skeleton, Badge } from "@chakra-ui/react";
 import PlatformIcons from "./Platform-Icons";
+import noImage from '../../assets/Images/no-image-placeholder-6f3882e0.webp'
+import Rating from "./Hooks/Rating";
 interface props {
   game: Game;
 }
 
+
 const GameCard = ({ game }: props) => {
   const { loading } = useGame();
+
   return (
     <Card variant="filled">
       <CardHeader borderRadius={"10px"} overflow={"hidden"}>
         {loading && (
-          <Card>
-            <CardHeader>
-              <Skeleton/>
-              </CardHeader>
           <Skeleton w={"100%"} h={"100%"}>
-            Loading.....
+            <Card variant={'filled'} w={"100%"} height={"100%"}>
+            <CardHeader>
+
+                <Skeleton />
+              </CardHeader>
+              <CardFooter>
+                <Skeleton />
+              </CardFooter>
+            </Card>
           </Skeleton>
-          </Card>
         )}
         <Image
-          src={game.background_image}
+          src={!game.background_image ? noImage : game.background_image}
           borderRadius={"5px"}
           overflow={"hidden"}
           objectFit={"cover"}
@@ -39,10 +47,8 @@ const GameCard = ({ game }: props) => {
           maxW={400}
           />
       </CardHeader>
-      <CardBody>
-        <Heading fontSize={"2xl"}>{game.name}</Heading>
+      {!loading && <CardBody>
         <HStack>
-          {loading&& <Skeleton/>}
           <PlatformIcons
             platform={game.parent_platforms.map((p) => p.platform)}
           />
@@ -51,7 +57,10 @@ const GameCard = ({ game }: props) => {
             {game.metacritic}
           </Badge>
         </HStack>
-      </CardBody>
+        <Heading fontSize={"2xl"} m={2}>{game.name}<Rating rating={game.rating_top} /></Heading>
+        {loading && <Skeleton w={"100%"} h={"100%"} />}
+
+      </CardBody>}
     </Card>
   );
 };

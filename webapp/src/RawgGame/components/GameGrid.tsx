@@ -3,12 +3,12 @@ import useGame from "./Hooks/useGame";
 import GameCard from "./GameCard";
 import { GameQuery } from "./GameApp";
 
-export interface props {
+interface props {
   gameQuery: GameQuery
 
 }
 const GameGrid = ({ gameQuery }: props) => {
-  const { data, error } = useGame(gameQuery.genres, gameQuery.platform);
+  const { data, error } = useGame(gameQuery);
   return (
     <SimpleGrid
       columns={{ base: 1, sm: 2, lg: 3 }}

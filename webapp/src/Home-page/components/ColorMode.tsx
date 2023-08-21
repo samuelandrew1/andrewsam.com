@@ -1,10 +1,11 @@
 import {
   extendTheme,
   type ThemeConfig,
-  Button,
-  useColorMode,
-} from "@chakra-ui/react";
 
+  useColorMode,
+  Icon,
+} from "@chakra-ui/react";
+import { VscColorMode } from 'react-icons/vsc'
 // 2. Add your color mode config
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -20,9 +21,9 @@ export function ToggleColorMode() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <header>
-      <Button onClick={toggleColorMode}>
+      <Icon onClick={toggleColorMode} as={VscColorMode} boxSize={25}>
         {colorMode === "light" ? "Dark" : "Light"}
-      </Button>
+      </Icon>
     </header>
   );
 }
