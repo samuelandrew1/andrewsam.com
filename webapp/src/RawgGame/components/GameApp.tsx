@@ -29,7 +29,7 @@ const GameApp = () => {
       </GridItem>
       {/* side bar */}
       <Show above="lg">
-        <GridItem area="side">
+        <GridItem area="side" >
           <Generes selectedGenre={GameQuery.genres} onSelectedGengres={(genres) => setGameQuery({ ...GameQuery, genres })} />
         </GridItem>
       </Show>
