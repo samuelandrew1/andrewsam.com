@@ -2,7 +2,7 @@ import { nav } from "./NavBar";
 import { FcHome, FcAbout, FcNews, FcCellPhone } from "react-icons/fc";
 import { AiFillProject } from "react-icons/ai";
 
-const NavObject: nav[] = [
+ export const NavObject: nav[] = [
   {
     text: "About",
     tooltip: "all you need to know about andrew samuel",

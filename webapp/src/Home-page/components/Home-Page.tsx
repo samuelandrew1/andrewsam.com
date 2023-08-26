@@ -5,8 +5,9 @@ import { motion } from 'framer-motion'
 import bgpicture from '../../assets/Images/pageBack.jpg'
 const HomePage = () => {
   return (
+    <>
     <Box
-      bg={"black"}
+
     >
       <Box >
         <Flex backgroundImage={bgpicture} height={300} bgSize={"cover"} bgPosition={"center"} bgRepeat={"no-repeat"} justifyContent={"center"} p={2}>
@@ -50,7 +51,8 @@ const HomePage = () => {
         </Grid>
       </Box>
       <MySkills />
-    </Box>
+      </Box>
+    </>
      
   )
 }

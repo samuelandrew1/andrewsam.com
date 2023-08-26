@@ -2,6 +2,7 @@ import jspic from '../../assets/Images/js.png'
 import htmlLogo from '../../assets/Images/html.png'
 import csslogo from '../../assets/Images/csslogo.png'
 import { Box, Center, Image, SimpleGrid, Text } from '@chakra-ui/react'
+import SkillsHeader from './SkillsHeader'
 
 
 
@@ -23,6 +24,8 @@ const MySkills
         ]
 
         return (
+            <>
+                <SkillsHeader text='My Skills' />
             <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }}
                 spacing={2}
                 padding={"25px"}>
@@ -55,6 +58,7 @@ const MySkills
                 )}
 
             </SimpleGrid>
+            </>
         )
     }
 export default MySkills
