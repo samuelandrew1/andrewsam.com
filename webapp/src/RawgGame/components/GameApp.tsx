@@ -1,7 +1,7 @@
-import { Box, Flex, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import { Box, Button, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 import GameGrid from "./GameGrid";
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Generes from "./GeneresList";
 import { useState } from "react";
 import { genres_props } from "./Hooks/UseData";
@@ -9,6 +9,8 @@ import PlatformSelector from "./PlatformSelector";
 import { platform } from "./Hooks/usePlatform";
 import SortSelector from "./Hooks/SortSelector";
 import GameHeading from "./Hooks/GameHeading";
+import Footer from "../../Home-page/components/Footer";
+import NavObject from "../../Home-page/components/Nav-Object";
 
 export interface GameQuery {
   genres: genres_props | null
@@ -20,9 +22,13 @@ const GameApp = () => {
   const [GameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
 
   return (
+    <>
     <Grid templateAreas={{ lg: `"nav nav" "side main"`, base: `"nav" "main"` }}>
       {/* nav bar */}
-      <GridItem area="nav">
+        <GridItem area="nav">
+          <NavLink to={"/project"}>
+            <Button>back</Button>
+          </NavLink>
         <NavBar onsearch={(searchInput =>
           //search bar
           setGameQuery({ ...GameQuery, searchInput }))} />
@@ -50,6 +56,9 @@ const GameApp = () => {
       </GridItem>
       <Outlet />
     </Grid>
+      <Footer footerItems={NavObject} />
+
+    </>
   );
 };
 

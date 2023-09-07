@@ -61,6 +61,9 @@ const GameCard = ({ game }: props) => {
         {loading && <Skeleton w={"100%"} h={"100%"} />}
 
       </CardBody>}
+      {loading && <CardFooter>
+        <Skeleton />
+      </CardFooter>}
     </Card>
   );
 };

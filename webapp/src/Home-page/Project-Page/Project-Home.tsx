@@ -20,6 +20,10 @@ interface projectProps {
 const ProjectHome = ({ projectItems }: projectProps) => {
   return (
     <Box p={5}>
+      <></>
+      <NavLink to={"/"}>
+        <Button>back</Button>
+      </NavLink>
       <Box m={["auto"]} w={"90%"}>
         <Heading p={2} m={3}>
           Welcome to my project Page
