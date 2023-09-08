@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc"
 import { IoLogoWhatsapp } from 'react-icons/io'
 
 const ContactsPage = () => {
-  const { register, handleSubmit } = useForm()
+  const { register,  } = useForm()
 
   return (
     <Stack mt={20} id="contact" m={'auto'} maxWidth={{ base: '80%', lg: "50%" }}>

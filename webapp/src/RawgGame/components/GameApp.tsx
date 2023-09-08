@@ -1,7 +1,7 @@
 import { Box, Button, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 import GameGrid from "./GameGrid";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link,  Outlet } from "react-router-dom";
 import Generes from "./GeneresList";
 import { useState } from "react";
 import { genres_props } from "./Hooks/UseData";

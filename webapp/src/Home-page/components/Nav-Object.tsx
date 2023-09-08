@@ -1,5 +1,5 @@
 import { nav } from "./NavBar";
-import { FcHome, FcAbout, FcNews, FcCellPhone } from "react-icons/fc";
+import { FcHome, FcAbout, FcCellPhone } from "react-icons/fc";
 import { AiFillProject } from "react-icons/ai";
 
  export const NavObject: nav[] = [

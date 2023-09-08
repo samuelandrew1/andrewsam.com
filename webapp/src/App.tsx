@@ -7,11 +7,8 @@ import NavObject from "./Home-page/components/Nav-Object";
 import MobileNav from "./Home-page/components/MobileNav";
 import { Routes, Route, } from "react-router-dom";
 import img from "./assets/Images/pageBack.jpg";
-import ProjectHome from "./Home-page/Project-Page/Project-Home";
-import projecObject from "./Home-page/Project-Page/Project-Object";
 import HomeApp from "./Home-page/components/Home-App";
 import ExpenseApp from "./ExpenseTraker/components/ExpenseApp";
-import ContactsPage from "./Contacts-Page/Contact-Page";
 import BlogHome from "./Blog-Page/Blog-Home";
 
 
