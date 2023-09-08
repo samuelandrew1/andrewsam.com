@@ -10,8 +10,9 @@ import {
   Flex,
   Divider,
   Box,
+  Center,
 } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { cardItems } from "./Project-Object";
 
 interface projectProps {
@@ -19,15 +20,16 @@ interface projectProps {
 }
 const ProjectHome = ({ projectItems }: projectProps) => {
   return (
-    <Box p={5}>
-      <></>
-      <NavLink to={"/"}>
-        <Button>back</Button>
-      </NavLink>
+    <Box p={5} id="project">
+
+
       <Box m={["auto"]} w={"90%"}>
+        <Center>
+
         <Heading p={2} m={3}>
-          Welcome to my project Page
+            my projects
         </Heading>
+        </Center>
       </Box>
       <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} spacing={10}>
         {projectItems.map((project) => (
@@ -42,7 +44,6 @@ const ProjectHome = ({ projectItems }: projectProps) => {
               boxShadow: "dark-lg",
               p: "6",
               rounded: "md",
-
               cursor: "pointer",
             }}
             bgColor={"gray.500"}
@@ -56,11 +57,11 @@ const ProjectHome = ({ projectItems }: projectProps) => {
                 <Text color={"whiteAlpha.800"}>{project.Description}</Text>
               </CardBody>
               <CardFooter>
-                <NavLink to={project.link}>
+                <Link to={project.link}>
                   <Button color={"white"} colorScheme="blue" fontSize={"xl"}>
                     view
                   </Button>
-                </NavLink>
+                </Link>
               </CardFooter>
             </Flex>
           </Card>

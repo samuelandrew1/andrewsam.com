@@ -7,6 +7,7 @@ import ExpenseFilter from "./ExpenseFilter"
 import ExpenseHeader from "./ExpenseHeader"
 import KeyFeatures from "./KeyFeatures"
 import { Button } from "@chakra-ui/react"
+import { Link } from "react-router-dom"
 
 
 const ExpenseApp = () => {
@@ -36,7 +37,9 @@ const ExpenseApp = () => {
 
     return (
         <>
+            <Link to='/'>
             <Button >back</Button>
+            </Link>
             <ExpenseHeader />
             <ExpenseFilter onItemFilter={categories} onFilter={handleFilter} />
         <ExpenseTable lock={lock}

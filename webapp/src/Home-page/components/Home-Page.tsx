@@ -3,11 +3,15 @@ import picture from '../../assets/Images/pic.jpg'
 import MySkills from "./Skill-Object"
 import { motion } from 'framer-motion'
 import bgpicture from '../../assets/Images/pageBack.jpg'
+import ContactsPage from "../../Contacts-Page/Contact-Page"
+import contctpicture from '../../assets/backG.jpg'
+import ProjectHome from "../Project-Page/Project-Home"
+import projecObject from "../Project-Page/Project-Object"
 const HomePage = () => {
   return (
     <>
     <Box
-
+        id="home"
     >
       <Box >
         <Flex backgroundImage={bgpicture} height={300} bgSize={"cover"} bgPosition={"center"} bgRepeat={"no-repeat"} justifyContent={"center"} p={2}>
@@ -41,7 +45,8 @@ const HomePage = () => {
                   x: [0, 900, 0]
                 }}
                 initial={{ x: 0 }}
-                color={"white"}
+                  color={"white"}
+                  id="about"
               >
 
             A passionate front-end developer with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
@@ -50,7 +55,14 @@ const HomePage = () => {
           </GridItem>
         </Grid>
       </Box>
-      <MySkills />
+        <MySkills />
+        <Box>
+          <ProjectHome projectItems={projecObject} />
+        </Box>
+        <Box bgImage={contctpicture} backgroundPosition={'center'} bgSize={'cover'} bgRepeat={'no-repeat'}>
+
+          <ContactsPage />
+        </Box>
       </Box>
     </>
      

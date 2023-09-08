@@ -11,13 +11,13 @@ const Footer = ({ footerItems }: props) => (
 
             <Icon as={BsFacebook} boxSize={30} m={5} color={'facebook.300'} />
             <List>
-                <HStack m={5}>
                     {footerItems.map(list =>
+                        <HStack m={5} key={list.id}>
                         <NavLink to={list.link}>
-                            <ListItem p={2} variant={'link'} as={Button}>{list.text}</ListItem>
-                        </NavLink>
-                    )}
+                                <ListItem key={list.link} p={2} variant={'link'} as={Button}>{list.text}</ListItem>
+                            </NavLink>
                 </HStack>
+                )}
             </List>
         </Box>
     </footer>

@@ -1,4 +1,5 @@
 import {
+  Button,
   Flex,
   HStack,
   Heading,
@@ -12,37 +13,45 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { IconType } from "react-icons";
+import { FcNews } from "react-icons/fc";
 import { Link } from "react-router-dom";
-
+import { HashLink } from 'react-router-hash-link';
 export interface nav {
   tooltip: string;
   icon: IconType;
   id: number;
   text: string;
   link: string;
+  hashLink: string
 }
 
 export interface props {
   navbar: nav[];
-  onClick: () => void;
+  onClick?: () => void;
 }
 
-const NavBar = ({ navbar, onClick }: props) => {
+const NavBar = ({ navbar, }: props) => {
   const [active, setActive] = useState(-1);
   return (
     <HStack>
       {/* <Show above="lg"> */}
       <HStack>
+        <Link to='/'>
       <Heading fontSize={"2xl"} color={"white"} marginLeft={"50px"}>
 
         Andrew samuel Tamaraprebi
       </Heading>
+        </Link>
       </HStack>
       {/* </Show> */}
       <Spacer />
+      <Link to='blog'>
+        <Button leftIcon={<FcNews />}>Blog</Button>
+      </Link>
       <UnorderedList>
         <Flex flexDirection={{ base: "column", lg: "row" }}>
           {navbar.map((nav, index) => (
+            <HashLink to={nav.hashLink} smooth>
             <ListItem
               key={nav.id}
               style={{ listStyle: "none" }}
@@ -50,7 +59,7 @@ const NavBar = ({ navbar, onClick }: props) => {
               bg={active === index ? "blue" : ""}
               onClick={() => {
                 setActive(index);
-                onClick();
+                // onClick();
               }}
               color={"white"}
               borderRadius={"10px"}
@@ -63,7 +72,7 @@ const NavBar = ({ navbar, onClick }: props) => {
               mr={"50px"}
               borderRight={"2px "}
             >
-              <Link to={nav.link}>
+
                 <Flex key={"FLEX BOX"} alignContent={"center"}>
                   <Icon
                     as={nav.icon}
@@ -82,8 +91,8 @@ const NavBar = ({ navbar, onClick }: props) => {
                     {nav.text}
                   </Text>
                 </Flex>{" "}
-              </Link>
             </ListItem>
+            </HashLink>
           ))}
         </Flex>
       </UnorderedList>

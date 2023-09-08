@@ -8,29 +8,42 @@ import { AiFillProject } from "react-icons/ai";
     tooltip: "all you need to know about andrew samuel",
     icon: FcAbout,
     id: 0,
-    link: "about",
+     link: "",
+     hashLink: '#about'
   },
+  // {
+  //   text: "Blog",
+  //   tooltip: "listen to latest news and trends",
+  //   icon: FcNews,
+  //   id: 1,
+  //   link: "blog",
+  //   hashLink: ''
+  // },
   {
-    text: "Blog",
-    tooltip: "listen to latest news and trends",
-    icon: FcNews,
-    id: 1,
-    link: "blog",
-  },
-  {
-    text: "Contact",
+    text: "contact",
     tooltip: "contact me",
     icon: FcCellPhone,
     id: 2,
-    link: "contact",
+    link: "",
+    hashLink: '#contact'
+
   },
   {
     text: "Project",
     tooltip: "vew projects",
     icon: AiFillProject,
     id: 3,
-    link: "project",
+    link: "",
+    hashLink: '#project'
+
   },
-  { text: "", tooltip: "go to home page", icon: FcHome, id: 4, link: "/" },
+   {
+     text: "",
+     tooltip: "go to home page",
+     icon: FcHome,
+     id: 4,
+     link: "/",
+     hashLink: '#home'
+   },
 ];
 export default NavObject;
