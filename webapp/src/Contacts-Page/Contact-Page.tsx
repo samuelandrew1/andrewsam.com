@@ -14,7 +14,9 @@ const ContactsPage = () => {
         <Heading color={'whiteAlpha.800'}>contact</Heading>
       </Center>
       <HStack>
+        <Link href="https://mailto:samuelandrew145@gmail.com" target="blank">
         <Icon as={FcGoogle} boxSize={50} />
+        </Link>
         <Link href=" https://wa.me/2348143006319" target="blank">
           <Icon as={IoLogoWhatsapp} boxSize={50} color={'whatsapp.400'} />
         </Link>

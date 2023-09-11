@@ -2,18 +2,18 @@ import {
   Button,
   Flex,
   HStack,
-  Heading,
+
   Icon,
+  List,
   ListItem,
   Show,
   Spacer,
-  Text,
-  UnorderedList,
+  
 
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { IconType } from "react-icons";
-import { FcNews } from "react-icons/fc";
+import { FcHome, FcNews } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 export interface nav {
@@ -37,24 +37,23 @@ const NavBar = ({ navbar, }: props) => {
       {/* <Show above="lg"> */}
       <HStack>
         <Link to='/'>
-      <Heading fontSize={"2xl"} color={"white"} marginLeft={"50px"}>
+          <Button leftIcon={<FcHome />} bg={'none'} fontSize={"2xl"} color={"white"} marginLeft={"50px"}>
 
         Andrew samuel Tamaraprebi
-      </Heading>
+          </Button>
         </Link>
       </HStack>
       {/* </Show> */}
       <Spacer />
       <Link to='blog'>
-        <Button leftIcon={<FcNews />}>Blog</Button>
+        <Button bg={'none'} color='white' leftIcon={<FcNews />}>Blog</Button>
       </Link>
-      <UnorderedList>
+      <List>
         <Flex flexDirection={{ base: "column", lg: "row" }}>
           {navbar.map((nav, index) => (
             <HashLink to={nav.hashLink} smooth>
             <ListItem
-              key={nav.id}
-              style={{ listStyle: "none" }}
+                key={nav.id}
               p={"10px"}
               bg={active === index ? "blue" : ""}
               onClick={() => {
@@ -83,19 +82,19 @@ const NavBar = ({ navbar, }: props) => {
                   <Show above="lg">
                     <Spacer />
                   </Show>
-                  <Text
-                    fontSize={"lg"}
-                    fontWeight={"bold"}
+
+                  {/* fontSize={"lg"}
+
                     bg={"blackAlpha.100"}
-                  >
+                   */}
                     {nav.text}
-                  </Text>
+
                 </Flex>{" "}
             </ListItem>
             </HashLink>
           ))}
         </Flex>
-      </UnorderedList>
+      </List>
     </HStack>
   );
 };

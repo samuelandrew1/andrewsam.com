@@ -9,7 +9,7 @@ import {
   useDisclosure,
   Button,
   Icon,
-  Heading,
+  
   Spacer,
   HStack,
   Show,
@@ -17,8 +17,6 @@ import {
   Flex,
   ListItem,
   Text,
-
-
 } from "@chakra-ui/react";
 import { HiOutlineMenu } from 'react-icons/hi'
 import { Link } from "react-router-dom";
@@ -26,16 +24,19 @@ import pic from "../../assets/Images/pageBack.jpg";
 import { props } from "./NavBar";
 import { useState } from "react";
 import { IconType } from "react-icons";
+import { HashLink } from "react-router-hash-link";
+import { FcHome, FcNews } from "react-icons/fc";
 
 const ikon: IconType = HiOutlineMenu
-
 function MobileNav({ navbar }: props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [active, setActive] = useState(-1);
 
   return (
     <HStack p={"10px"} bgImage={pic}>
-      <Heading fontSize={20} color={"white"} marginLeft={20}>Andrew samuel T.</Heading>
+      <Link to='/'>
+        <Button leftIcon={<FcHome />} fontSize={20} color={"white"} marginLeft={20}>Andrew samuel T.</Button>
+      </Link>
 
       <Spacer />
       <Icon as={ikon} color="white" onClick={onOpen} boxSize={"50px"} />
@@ -45,11 +46,17 @@ function MobileNav({ navbar }: props) {
         <DrawerContent onClick={onClose} bgImage={pic}>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Heading color={"white"}>Andrew samuel</Heading>
+            <Link to='/'>
+              <Button leftIcon={<FcHome />} color={"white"}>Andrew samuel</Button>
+            </Link>
           </DrawerHeader>
           <DrawerBody>
+            <Link to='blog'>
+              <Button leftIcon={<FcNews />} >Blog</Button>
+            </Link>
             <UnorderedList>
               {navbar.map((nav, index) => (
+                <HashLink to={nav.hashLink}>
                 <ListItem
                   key={nav.id}
                   style={{ listStyle: "none" }}
@@ -70,7 +77,7 @@ function MobileNav({ navbar }: props) {
                   mr={"50px"}
                   borderRight={"2px "}
                 >
-                  <Link to={nav.link}>
+
                     <Flex key={"FLEX BOX"} alignContent={"center"}>
                       <Icon
                         as={nav.icon}
@@ -89,8 +96,8 @@ function MobileNav({ navbar }: props) {
                         {nav.text}
                       </Text>
                     </Flex>{" "}
-                  </Link>
                 </ListItem>
+                </HashLink>
               ))}
             </UnorderedList>
           </DrawerBody>

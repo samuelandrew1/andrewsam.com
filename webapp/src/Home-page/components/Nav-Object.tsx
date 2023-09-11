@@ -1,5 +1,5 @@
 import { nav } from "./NavBar";
-import { FcHome, FcAbout, FcCellPhone } from "react-icons/fc";
+import {  FcAbout, FcCellPhone } from "react-icons/fc";
 import { AiFillProject } from "react-icons/ai";
 
  export const NavObject: nav[] = [
@@ -37,13 +37,6 @@ import { AiFillProject } from "react-icons/ai";
     hashLink: '#project'
 
   },
-   {
-     text: "",
-     tooltip: "go to home page",
-     icon: FcHome,
-     id: 4,
-     link: "/",
-     hashLink: '#home'
-   },
+
 ];
 export default NavObject;

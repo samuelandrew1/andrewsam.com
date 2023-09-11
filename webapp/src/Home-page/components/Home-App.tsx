@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom"
 import Footer from "./Footer"
 import HomePage from "./Home-Page"
 import NavObject from "./Nav-Object"
