@@ -1,40 +1,37 @@
 import { nav } from "./NavBar";
-import {  FcAbout, FcCellPhone } from "react-icons/fc";
+import { FcAbout, FcCellPhone, FcNews } from "react-icons/fc";
 import { AiFillProject } from "react-icons/ai";
 
  export const NavObject: nav[] = [
   {
     text: "About",
     tooltip: "all you need to know about andrew samuel",
-    icon: FcAbout,
+     icon: <FcAbout />,
     id: 0,
-     link: "",
-     hashLink: '#about'
+     link: '/about'
   },
-  // {
-  //   text: "Blog",
-  //   tooltip: "listen to latest news and trends",
-  //   icon: FcNews,
-  //   id: 1,
-  //   link: "blog",
-  //   hashLink: ''
-  // },
+   {
+     text: "blog",
+     tooltip: "listen to latest news and trends",
+     icon: <FcNews />,
+     id: 1,
+     link: "/blog",
+   },
   {
     text: "contact",
     tooltip: "contact me",
-    icon: FcCellPhone,
+    icon: <FcCellPhone />,
     id: 2,
-    link: "",
-    hashLink: '#contact'
+    link: '/contact'
 
   },
   {
     text: "Project",
     tooltip: "vew projects",
-    icon: AiFillProject,
+    icon: <AiFillProject />,
     id: 3,
-    link: "",
-    hashLink: '#project'
+
+    link: '/project'
 
   },
 

@@ -9,101 +9,94 @@ import {
   useDisclosure,
   Button,
   Icon,
-  
   Spacer,
   HStack,
   Show,
-  UnorderedList,
   Flex,
   ListItem,
-  Text,
+  List,
 } from "@chakra-ui/react";
 import { HiOutlineMenu } from 'react-icons/hi'
 import { Link } from "react-router-dom";
-import pic from "../../assets/Images/pageBack.jpg";
 import { props } from "./NavBar";
 import { useState } from "react";
 import { IconType } from "react-icons";
-import { HashLink } from "react-router-hash-link";
-import { FcHome, FcNews } from "react-icons/fc";
+import { FcHome } from "react-icons/fc";
 
 const ikon: IconType = HiOutlineMenu
+
 function MobileNav({ navbar }: props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [active, setActive] = useState(-1);
 
   return (
-    <HStack p={"10px"} bgImage={pic}>
+    <HStack p={"10px"}>
       <Link to='/'>
-        <Button leftIcon={<FcHome />} fontSize={20} color={"white"} marginLeft={20}>Andrew samuel T.</Button>
+        <Button leftIcon={<FcHome />} variant='link' fontSize={20} marginLeft={20}>Andrew samuel T.</Button>
       </Link>
-
       <Spacer />
       <Icon as={ikon} color="white" onClick={onOpen} boxSize={"50px"} />
-
-      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+      <Drawer isOpen={isOpen} placement="right" onClose={onClose} >
         <DrawerOverlay color={"white"} />
-        <DrawerContent onClick={onClose} bgImage={pic}>
-          <DrawerCloseButton />
+        <DrawerContent onClick={onClose} bg='#2f304c'>
+          <DrawerCloseButton bg='#e3d8d8' />
           <DrawerHeader>
             <Link to='/'>
-              <Button leftIcon={<FcHome />} color={"white"}>Andrew samuel</Button>
+              <Button bg='#e3d8d8' color='#2f304c' leftIcon={<FcHome />}>Andrew samuel</Button>
             </Link>
           </DrawerHeader>
           <DrawerBody>
-            <Link to='blog'>
-              <Button leftIcon={<FcNews />} >Blog</Button>
-            </Link>
-            <UnorderedList>
-              {navbar.map((nav, index) => (
-                <HashLink to={nav.hashLink}>
-                <ListItem
+            {navbar.map((nav, index) => {
+              return (
+                <List
                   key={nav.id}
-                  style={{ listStyle: "none" }}
-                  p={"10px"}
-                  bg={active === index ? "blue" : ""}
-                  onClick={() => {
-                    setActive(index);
-                  }}
-                  m={"50px"}
-                  color={"white"}
-                  borderRadius={"10px"}
-                  cursor={"pointer"}
-                  _hover={{
-                    textDecoration: "overline 7px solid white",
-                    opacity: 0.8,
-                  }}
-                  _active={{ color: "red" }}
-                  mr={"50px"}
-                  borderRight={"2px "}
                 >
+                  <Link to={nav.link}>
+                    <ListItem
+                      style={{ listStyle: "none" }}
+                      p={"10px"}
+                      bg={active === index ? "#3b5998" : ""}
+                      onClick={() => {
+                        setActive(index);
+                      }}
+                      m={"50px"}
+                      color={"white"}
+                      borderRadius={"10px"}
+                      cursor={"pointer"}
+                      _hover={{
+                        textDecoration: "overline 7px solid white",
+                        opacity: 0.8,
+                      }}
+                      _active={{ color: "red" }}
+                      mr={"50px"}
 
-                    <Flex key={"FLEX BOX"} alignContent={"center"}>
-                      <Icon
-                        as={nav.icon}
-                        key={nav.text}
-                        boxSize={"24px"}
-                        color={"green.100"}
-                      />
-                      <Show above="lg">
-                        <Spacer />
-                      </Show>
-                      <Text
-                        fontSize={"lg"}
-                        fontWeight={"bold"}
-                        bg={"blackAlpha.100"}
-                      >
-                        {nav.text}
-                      </Text>
-                    </Flex>{" "}
-                </ListItem>
-                </HashLink>
-              ))}
-            </UnorderedList>
+                    >
+
+                      <Flex key={"FLEX BOX"} alignContent={"center"}>
+
+                        <Show above="lg">
+                          <Spacer />
+                        </Show>
+                        <Button
+                          leftIcon={nav.icon}
+                          fontSize={"lg"}
+                          fontWeight={"bold"}
+                          color={active === index ? 'whiteAlpha.800' : "#e3d8d8"}
+                          bg=''
+                          _hover={{ bg: '' }}
+                        >
+                          {nav.text}
+                        </Button>
+                      </Flex>{" "}
+                    </ListItem>
+                  </Link>
+                </List>
+              );
+            })}
           </DrawerBody>
 
           <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose} color={"white"}>
+            <Button mr={3}bg='#e3d8d8' onClick={onClose} color='#2f304c'>
               Cancel
             </Button>
           </DrawerFooter>

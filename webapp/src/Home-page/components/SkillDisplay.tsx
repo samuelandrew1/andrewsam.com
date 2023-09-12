@@ -11,6 +11,7 @@ const SkillDisplay = ({ getSkills }: props) => {
         <Box>
             <Image src={getSkills.bgImage} />
             <Text bg={"red.100"}>{getSkills.pgLanguage}</Text>
+            {/* <Text>{getSkills.serviceDescription}</Text> */}
         </Box>
 
     )

@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Show } from "@chakra-ui/react";
 import GameApp from "./RawgGame/components/GameApp";
 import NavBar from "./Home-page/components/NavBar";
 import NavObject from "./Home-page/components/Nav-Object";
@@ -10,7 +10,9 @@ import img from "./assets/Images/pageBack.jpg";
 import HomeApp from "./Home-page/components/Home-App";
 import ExpenseApp from "./ExpenseTraker/components/ExpenseApp";
 import BlogHome from "./Blog-Page/Blog-Home";
-
+import ContactApp from "./Contacts-Page/Contact-App";
+import ProjectHome from "./Home-page/Project-Page/Project-Home";
+import projecObject from "./Home-page/Project-Page/Project-Object";
 
 function App() {
   function handleClick() {
@@ -26,10 +28,9 @@ function App() {
         position={"fixed"}
         w={"100%"}
         zIndex={999}
-        backgroundImage={img}
-        bgSize={"cover"}
-        bgRepeat={"no-repeat"}
-        bgPosition={"center"}
+
+        borderBottom='3px solid brown'
+        bg='#2f304c'
       >
         <Show above="lg">
           <NavBar navbar={NavObject} onClick={handleClick} />
@@ -44,15 +45,20 @@ function App() {
       {/* main page */}
       <GridItem area="main"
         position={"absolute"}
-        top={{base:57, lg:45}} w={"100%"}>
+        bg='#c3c4c6'
+
+        top={{ base: 57, lg: 45 }} w={"100%"}>
+
         <Routes>
           <Route path="/" element={<HomeApp />} />    
           <Route path="blog" element={<BlogHome />} />
 
+          <Route path="contact" element={<ContactApp />} />
+
+          <Route path="project" element={<ProjectHome projectItems={projecObject} />} />
           <Route path="gamehub" element={<GameApp />} />
           <Route path="expenseTracker" element={<ExpenseApp />} />
         </Routes> 
-
       </GridItem>
     </Grid>
   );

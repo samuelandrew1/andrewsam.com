@@ -2,27 +2,21 @@ import {
   Button,
   Flex,
   HStack,
-
-  Icon,
   List,
   ListItem,
-  Show,
   Spacer,
   
 
 } from "@chakra-ui/react";
-import { useState } from "react";
-import { IconType } from "react-icons";
-import { FcHome, FcNews } from "react-icons/fc";
+import { ReactElement, useState } from "react";
+import { FcHome } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
 export interface nav {
   tooltip: string;
-  icon: IconType;
+  icon: ReactElement<any, any>;
   id: number;
   text: string;
   link: string;
-  hashLink: string
 }
 
 export interface props {
@@ -34,67 +28,57 @@ const NavBar = ({ navbar, }: props) => {
   const [active, setActive] = useState(-1);
   return (
     <HStack>
-      {/* <Show above="lg"> */}
-      <HStack>
-        <Link to='/'>
-          <Button leftIcon={<FcHome />} bg={'none'} fontSize={"2xl"} color={"white"} marginLeft={"50px"}>
 
+
+        <Link to='/'>
+        <Button leftIcon={<FcHome />} fontSize={"2xl"} variant='link' color={"white"} marginLeft={"50px"}>
         Andrew samuel Tamaraprebi
           </Button>
         </Link>
-      </HStack>
-      {/* </Show> */}
+
+
       <Spacer />
-      <Link to='blog'>
-        <Button bg={'none'} color='white' leftIcon={<FcNews />}>Blog</Button>
-      </Link>
-      <List>
-        <Flex flexDirection={{ base: "column", lg: "row" }}>
-          {navbar.map((nav, index) => (
-            <HashLink to={nav.hashLink} smooth>
+      
+      {navbar.map((nav, index) => (
+            
+            
+          <List>
+          
+              <Link to={nav.link}>
             <ListItem
                 key={nav.id}
-              p={"10px"}
-              bg={active === index ? "blue" : ""}
-              onClick={() => {
-                setActive(index);
-                // onClick();
-              }}
-              color={"white"}
-              borderRadius={"10px"}
-              cursor={"pointer"}
-              _hover={{
-                textDecoration: "overline 7px solid white",
-                opacity: 0.8,
-              }}
-              _active={{ color: "red" }}
-              mr={"50px"}
-              borderRight={"2px "}
-            >
+                p={"10px"}
+                onClick={() => {
+                  setActive(index);
+                  // onClick();
+                }}
+                color={"white"}
+                borderRadius={"10px"}
+                cursor={"pointer"}
+                _hover={{
+                  opacity: 0.8,
+                }}
+                _active={{ color: "red" }}
+                mr={"50px"}
+                >
 
-                <Flex key={"FLEX BOX"} alignContent={"center"}>
-                  <Icon
-                    as={nav.icon}
-                    key={nav.text}
-                    boxSize={"24px"}
-                    color={"green.100"}
-                  />
-                  <Show above="lg">
-                    <Spacer />
-                  </Show>
-
-                  {/* fontSize={"lg"}
-
-                    bg={"blackAlpha.100"}
-                   */}
+                  <HStack key={"FLEX BOX"}>                
+                    <Button leftIcon={nav.icon}
+                      py={4}
+                      colorScheme={active === index ? 'messenger' : "black"}
+                      bg={active === index ? 'white' : ""}
+                      variant='ghost'>
                     {nav.text}
-
-                </Flex>{" "}
+                    </Button>
+                </HStack>{" "}
             </ListItem>
-            </HashLink>
-          ))}
-        </Flex>
-      </List>
+            </Link>
+         </List>
+          
+            ))}
+              
+          
+      
     </HStack>
   );
 };

@@ -1,26 +1,33 @@
-import { Box, Center, Flex, Grid, GridItem, Heading, Image, Text, } from "@chakra-ui/react"
+import { Box, Center, Flex, Grid, GridItem, Heading, Image, Text, baseTheme, } from "@chakra-ui/react"
 import picture from '../../assets/Images/pic.jpg'
 import MySkills from "./Skill-Object"
 import { motion } from 'framer-motion'
-import bgpicture from '../../assets/Images/pageBack.jpg'
-import ContactsPage from "../../Contacts-Page/Contact-Page"
-import contctpicture from '../../assets/backG.jpg'
 import ProjectHome from "../Project-Page/Project-Home"
 import projecObject from "../Project-Page/Project-Object"
-const HomePage = () => {
+interface props {
+  headText: string
+  subText: string
+}
+
+const HomePage = ({ headText, subText }: props) => {
   return (
     <>
-    <Box
+      <Box
         id="home"
+        // bg='#b9bcd4'
+        maxW={{ lg: "80%", base: "90%" }}
+        m='auto'
     >
       <Box >
-        <Flex backgroundImage={bgpicture} height={300} bgSize={"cover"} bgPosition={"center"} bgRepeat={"no-repeat"} justifyContent={"center"} p={2}>
-          <Center>
+          <Box>
 
-            <Heading color={"whiteAlpha.800"}>junior software engineer</Heading>
-          </Center>
-        </Flex>
-        <Grid templateAreas={{ base: `"img" "text"`, lg: `"img text"` }} bgImage={bgpicture}>
+          <Center>
+              <Heading mt={10} p={3}>{headText}</Heading>
+            </Center>
+            <Text fontSize='2xl'>{subText}</Text>
+          </Box>
+
+          <Grid templateAreas={{ base: `"img" "text"`, lg: `"img text"` }}>
           <GridItem area={"img"}>
 
             <Image src={picture}
@@ -33,19 +40,18 @@ const HomePage = () => {
           </GridItem>
 
           <GridItem area={"text"}>
-        <Center>
+              <Center >
               <Text p={{ lg: 10, sm: 2 }}
-                fontSize={{ lg: "5xl", base: "3xl" }}
+                fontSize={{ lg: "4xl", base: "3xl" }}
                 w={"90%"}
                 lineHeight={"55px"}
-                as={motion.div}
-                whileHover={{ scale: 1.1 }}
+                  as={motion.div}
                 animate={{
                   scale: 1,
                   x: [0, 900, 0]
                 }}
                 initial={{ x: 0 }}
-                  color={"white"}
+                  color='#2f304c'
                   id="about"
               >
 
@@ -59,10 +65,7 @@ const HomePage = () => {
         <Box>
           <ProjectHome projectItems={projecObject} />
         </Box>
-        <Box bgImage={contctpicture} backgroundPosition={'center'} bgSize={'cover'} bgRepeat={'no-repeat'}>
 
-          <ContactsPage />
-        </Box>
       </Box>
     </>
      

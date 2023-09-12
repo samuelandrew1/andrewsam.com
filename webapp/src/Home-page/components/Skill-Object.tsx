@@ -1,59 +1,103 @@
-import jspic from '../../assets/Images/js.png'
-import htmlLogo from '../../assets/Images/html.png'
+import jspic from '../../assets/Images/js.webp'
 import csslogo from '../../assets/Images/csslogo.png'
-import { Box, Center, Image, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, Center, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import SkillsHeader from './SkillsHeader'
-
-
+import reactlogo from '../../assets/Images/reactLogo.webp'
+import agileLogo from '../../assets/Images/agilelogo.png'
 
 export interface getProps {
     pgLanguage: string
     bgImage: string
     text: string
     id: number
-    containerId: number
+    containerId?: number
     imageDescription: string
+    serviceDescription?: string
 }
 
 const MySkills
     = () => {
         const Object: getProps[] = [
-            { imageDescription: "html loge", pgLanguage: "HTML", bgImage: htmlLogo, text: "html", id: 1, containerId: 1 },
-            { imageDescription: "css logo", pgLanguage: "CSS", bgImage: csslogo, text: "html", id: 2, containerId: 2 },
-            { imageDescription: "javascript logo", pgLanguage: "JavaScript", bgImage: jspic, text: "javaSript", id: 3, containerId: 3 },
+            {
+                imageDescription: "react logO",
+                pgLanguage: "React.js",
+                bgImage: reactlogo,
+                text: "react",
+                id: 1,
+                containerId: 1,
+                serviceDescription: `  Expertise in building dynamic, single-page applications using React. 
+                 Proficient in managing
+                 application state with Redux, Mobx, or the React context API for complex applications,
+                 Implementing client-side routing with React Router for SPAs and maintaining clean and SEO-friendly URLs.
+                Developed and maintained various React applications, including a customer portal that improved user satisfaction.
+                Implemented user authentication and authorization using JWT tokens and role-based access control (RBAC).
+                Worked closely with the back-end team to design API endpoints and ensure seamless integration between front-end and back-end systems.
+                `
+            },
+            {
+                imageDescription: "css logo",
+                pgLanguage: "HTML/CSS",
+                bgImage: csslogo,
+                text: "html",
+                id: 2,
+                containerId: 2,
+                serviceDescription: `Creating responsive Designs and Ensuring seamless user experiences across various devices and screen sizes through responsive design techniques and CSS frameworks like Bootstrap.`
+            },
+            {
+                imageDescription: "javascript logo",
+                pgLanguage: "JavaScript/ES5",
+                bgImage: jspic,
+                text: "javaSript",
+                id: 3,
+                containerId: 3,
+                serviceDescription: ` Strong proficiency in JavaScript with a deep understanding of ES6 features and modern coding standards.`
+            },
+            {
+                imageDescription: 'agile logo',
+                pgLanguage: 'Agile/Scrum',
+                bgImage: agileLogo,
+                text: 'Agile/Scrum',
+                id: 4,
+                serviceDescription: ` Proficient in Agile development methodologies and Scrum practices for effective project management and collaboration.`
+            }
         ]
-
+        const heading = "My skills and experience"
+        const text = " Welcome to my skills page, where I showcase my frontend engineering expertise. I'm passionate about creating dynamic and user-friendly web experiences. Below, you'll find a list of my skills and technologies I've mastered over the years."
         return (
             <>
-                <SkillsHeader text='My Skills' />
-            <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }}
-                spacing={2}
+                <SkillsHeader text={text} heading={heading} />
+                <SimpleGrid
+                    spacing={10}
+                // columns={{ base: 1, lg: 2 }}
                 padding={"25px"}>
 
                 {Object.map(items =>
                     <Box key={items.containerId}
                         rounded='md'
+                        maxW={{ lg: "80%" }}
                         border={"4px solid brown"}
-                        bg={"white"} m={5}
+                        bg={"white"} 
                         boxShadow='outline'
                         justifyItems={"center"}
+                        m="auto"
                         p={5}>
 
                         <Center>
                             <Image key={items.id}
                                 src={items.bgImage}
-                                w={"30px"} h={"40px"}
+                                w={"200px"} 
                                 objectFit={"cover"} m={5}
                                 alt={items.imageDescription}
                             />
                         </Center>
                         <Center>
-                            <Text key={items.text}
-                                fontSize={30}
+                            <Heading key={items.text}
+                                fontSize={22} 
                             >
                                 {items.pgLanguage}
-                            </Text>
+                            </Heading>
                         </Center>
+                        <Text fontSize='lg'>{items.serviceDescription}</Text>
                     </Box>
                 )}
 
