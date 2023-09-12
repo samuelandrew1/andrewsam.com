@@ -64,7 +64,7 @@ const MySkills
         const heading = "My skills and experience"
         const text = " Welcome to my skills page, where I showcase my frontend engineering expertise. I'm passionate about creating dynamic and user-friendly web experiences. Below, you'll find a list of my skills and technologies I've mastered over the years."
         return (
-            <>
+            <Box bgGradient='linear(to-l, #55597c, #e3d8d8)' borderRadius={20}mt={100}>
                 <SkillsHeader text={text} heading={heading} />
                 <SimpleGrid
                     spacing={10}
@@ -76,7 +76,7 @@ const MySkills
                         rounded='md'
                         maxW={{ lg: "80%" }}
                         border={"4px solid brown"}
-                        bg={"white"} 
+                        bg={'whiteAlpha.600'} 
                         boxShadow='outline'
                         justifyItems={"center"}
                         m="auto"
@@ -91,7 +91,7 @@ const MySkills
                             />
                         </Center>
                         <Center>
-                            <Heading key={items.text}
+                            <Heading  key={items.text}
                                 fontSize={22} 
                             >
                                 {items.pgLanguage}
@@ -102,7 +102,7 @@ const MySkills
                 )}
 
             </SimpleGrid>
-            </>
+            </Box>
         )
     }
 export default MySkills

@@ -45,9 +45,9 @@ function App() {
       {/* main page */}
       <GridItem area="main"
         position={"absolute"}
-        bg='#c3c4c6'
+        
 
-        top={{ base: 57, lg: 45 }} w={"100%"}>
+        top={{ base: 57, lg: 0 }} w={"100%"}>
 
         <Routes>
           <Route path="/" element={<HomeApp />} />    

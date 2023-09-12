@@ -20,7 +20,7 @@ interface projectProps {
 }
 const ProjectHome = ({ projectItems }: projectProps) => {
   return (
-    <Box p={5} id="project">
+    <Box p={5} id="project" position={'absolute'} top={10}>
 
 
       <Box m={["auto"]} w={"90%"}>

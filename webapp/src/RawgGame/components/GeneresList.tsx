@@ -12,10 +12,10 @@ const Generes = ({ onSelectedGengres, selectedGenre }: props) => {
             <Heading mb={3} fontSize={"2xl"}>Genres</Heading>
         <List>
             {data.map((list) =>
-                <ListItem key={list.id}>
+                <ListItem key={list.id} >
                     <HStack>
                         <Img src={list.image_background} boxSize={"32px"} m={2} objectFit={"cover"} />
-                        <Button fontWeight={list.id == selectedGenre?.id ? "bold" : "normal"} onClick={() => onSelectedGengres(list)} variant={"link"} key={list.name} fontSize={"lg"}>{list.name}</Button>
+                        <Button fontWeight={list.id == selectedGenre?.id ? "bold" : "normal"} onClick={() => onSelectedGengres(list)} variant={"link"} key={list.name} fontSize={"lg"} >{list.name}</Button>
                     </HStack>
                 </ListItem>
             )}

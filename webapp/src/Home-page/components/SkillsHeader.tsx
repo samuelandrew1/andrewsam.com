@@ -6,13 +6,13 @@ interface props {
 }
 const SkillsHeader = ({ text, heading }: props) => {
     return (
-        <Box>
+        <Box >
             
         <Center p={5}>
 
-            <Heading>{heading}</Heading>
+            <Heading p={5} bg='#2f304c' color='#e3d8d8' borderRadius={20}>{heading}</Heading>
             </Center>
-            <Text>{text }</Text>
+            <Text p={10} fontSize='lg'>{text }</Text>
         </Box>
     )
 }

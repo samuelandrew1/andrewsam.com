@@ -22,8 +22,8 @@ const GameApp = () => {
   const [GameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
 
   return (
-    <>
-    <Grid templateAreas={{ lg: `"nav nav" "side main"`, base: `"nav" "main"` }}>
+    <Box>
+      <Grid templateAreas={{ lg: `"nav nav" "side main"`, base: `"nav" "main"` }} >
       {/* nav bar */}
         <GridItem area="nav">
           <Link to={"/"}>
@@ -58,7 +58,7 @@ const GameApp = () => {
     </Grid>
       <Footer footerItems={NavObject} />
 
-    </>
+    </Box>
   );
 };
 
