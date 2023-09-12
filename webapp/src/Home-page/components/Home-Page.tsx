@@ -1,9 +1,7 @@
-import { Box, Center, Flex, Grid, GridItem, Heading, Image, Text, baseTheme, } from "@chakra-ui/react"
+import { Box, Center, Grid, GridItem, Heading, Image, Text, } from "@chakra-ui/react"
 import picture from '../../assets/Images/pic.jpg'
 import MySkills from "./Skill-Object"
 import { motion } from 'framer-motion'
-import ProjectHome from "../Project-Page/Project-Home"
-import projecObject from "../Project-Page/Project-Object"
 interface props {
   headText: string
   subText: string

@@ -1,12 +1,11 @@
 import "./App.css";
 
-import { Box, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem, Show } from "@chakra-ui/react";
 import GameApp from "./RawgGame/components/GameApp";
 import NavBar from "./Home-page/components/NavBar";
 import NavObject from "./Home-page/components/Nav-Object";
 import MobileNav from "./Home-page/components/MobileNav";
 import { Routes, Route, } from "react-router-dom";
-import img from "./assets/Images/pageBack.jpg";
 import HomeApp from "./Home-page/components/Home-App";
 import ExpenseApp from "./ExpenseTraker/components/ExpenseApp";
 import BlogHome from "./Blog-Page/Blog-Home";
