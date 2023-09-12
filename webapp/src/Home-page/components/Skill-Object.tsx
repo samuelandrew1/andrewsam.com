@@ -45,7 +45,7 @@ const MySkills
             },
             {
                 imageDescription: "javascript logo",
-                pgLanguage: "JavaScript/ES5",
+                pgLanguage: "JavaScript/ES6",
                 bgImage: jspic,
                 text: "javaSript",
                 id: 3,
