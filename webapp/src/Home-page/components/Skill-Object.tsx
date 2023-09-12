@@ -98,7 +98,7 @@ const MySkills
                                 {items.pgLanguage}
                             </Heading>
                         </Center>
-                        <Text fontSize='3xl'>{items.serviceDescription}</Text>
+                        <Text fontSize={{base:'lg,', lg:'2xl'}}>{items.serviceDescription}</Text>
                     </Box>
                 )}
 
