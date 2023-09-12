@@ -1,10 +1,13 @@
-import { Box, Button, Center, FormControl, FormLabel, HStack, Heading, Icon, Input, InputGroup, InputLeftElement, Link, Stack } from "@chakra-ui/react";
+import { Box, Text, Button, Center, FormControl, FormLabel, HStack, Heading, Icon, Input, InputGroup, InputLeftElement, Link, Stack } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { FiPhone } from 'react-icons/fi';
 import { AiOutlineMail } from 'react-icons/ai';
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoWhatsapp } from 'react-icons/io';
-import { props } from "./Contact-Page";
+
+interface props {
+    contactText: string
+}
 
 export const ContactsPage = ({ contactText }: props) => {
     const { register, } = useForm();
@@ -24,7 +27,7 @@ export const ContactsPage = ({ contactText }: props) => {
                     <Icon as={IoLogoWhatsapp} boxSize={50} color={'whatsapp.400'} />
                 </Link>
             </HStack>
-            <form>
+            <form name="contact" method="POST" data-netlify="true">
                 <Box>
                     <FormControl isRequired>
                         <FormLabel color={'whiteAlpha.800'}>First Name</FormLabel>
