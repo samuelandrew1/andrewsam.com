@@ -57,7 +57,7 @@ const HomePage = ({ headText, subText }: props) => {
                   
               >
 
-            A passionate front-end developer with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
+            Hi! My name is Andrew Samuel Tamaraprebi, I am a passionate front-end developer with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
           </Text>
         </Center>
           </GridItem>
