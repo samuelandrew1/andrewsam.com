@@ -10,9 +10,9 @@ const SkillsHeader = ({ text, heading }: props) => {
             
         <Center p={5}>
 
-            <Heading p={5} bg='#2f304c' color='#e3d8d8' borderRadius={20}>{heading}</Heading>
+            <Heading  p={5}mt={10} bg='#2f304c' color='#e3d8d8' borderRadius={20}>{heading}</Heading>
             </Center>
-            <Text p={10} fontSize='lg'>{text }</Text>
+            <Text p={10}  fontSize='2xl'>{text }</Text>
         </Box>
     )
 }

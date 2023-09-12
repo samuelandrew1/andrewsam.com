@@ -85,7 +85,8 @@ const MySkills
                         <Center>
                             <Image key={items.id}
                                 src={items.bgImage}
-                                w={"200px"} 
+                                w={"300px"} 
+                                borderRadius={30}
                                 objectFit={"cover"} m={5}
                                 alt={items.imageDescription}
                             />
@@ -97,7 +98,7 @@ const MySkills
                                 {items.pgLanguage}
                             </Heading>
                         </Center>
-                        <Text fontSize='lg'>{items.serviceDescription}</Text>
+                        <Text fontSize='3xl'>{items.serviceDescription}</Text>
                     </Box>
                 )}
 
