@@ -65,8 +65,6 @@ const HomePage = ({ headText, subText }: props) => (
                     p={5}
                     borderRadius={{lg:'50px', base:"200px"}}
                     overflow={"hidden"} />
-
-
                   {/* </Box> */}
                 </Animator>
               </ScrollPage>
@@ -84,10 +82,8 @@ const HomePage = ({ headText, subText }: props) => (
                 }}
                 initial={{ x: 0 }}
                 color={'blackAlpha.800'}
-                id="about"
-
+                  id="about"
                 >
-
                 Hi! My name is Andrew Samuel Tamaraprebi, I am a passionate front-end developer with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
               </Text>
               </Show>
@@ -99,15 +95,11 @@ const HomePage = ({ headText, subText }: props) => (
           <Animator animation={ZoomInScrollOut}
           >
             <Center>
-
               <Heading mt={5} >{headText}</Heading>
             </Center>
             <Text fontSize='4xl' p={5}>{subText}</Text>
           </Animator>
-
         </ScrollPage>
-
-
         <ScrollPage>
           <SkillsHeader text={text} heading={heading} />
         </ScrollPage>

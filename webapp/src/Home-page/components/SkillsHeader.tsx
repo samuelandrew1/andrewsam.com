@@ -1,5 +1,5 @@
 import { Box,Text, Center, Heading } from "@chakra-ui/react"
-import { Animator, FadeIn, MoveOut, ScrollPage, ZoomIn,  batch } from "react-scroll-motion"
+import { Animator, FadeIn, ScrollPage,  batch } from "react-scroll-motion"
 
 interface props {
     text: string
@@ -8,8 +8,8 @@ interface props {
  export const ZoomInScrollOut = batch(
     // FadeOut(),
     FadeIn(),
-    ZoomIn(),
-    MoveOut(0, -1000)
+    // ZoomIn(),
+    // MoveOut(0, -1000)
 );
 
 const SkillsHeader = ({ text, heading }: props) => {
