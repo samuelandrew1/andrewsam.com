@@ -1,7 +1,6 @@
 import jspic from '../../assets/Images/js.webp'
 import csslogo from '../../assets/Images/csslogo.png'
 import { Box, Center, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
-import SkillsHeader from './SkillsHeader'
 import reactlogo from '../../assets/Images/reactLogo.webp'
 import agileLogo from '../../assets/Images/agilelogo.png'
 
@@ -61,44 +60,45 @@ const MySkills
                 serviceDescription: ` Proficient in Agile development methodologies and Scrum practices for effective project management and collaboration.`
             }
         ]
-        const heading = "My skills and experience"
-        const text = " Welcome to my skills page, where I showcase my frontend engineering expertise. I'm passionate about creating dynamic and user-friendly web experiences. Below, you'll find a list of my skills and technologies I've mastered over the years."
-        return (
-            <Box bgGradient='linear(to-l, #55597c, #e3d8d8)' borderRadius={20}mt={100}>
-                <SkillsHeader text={text} heading={heading} />
-                <SimpleGrid
-                    spacing={10}
-                // columns={{ base: 1, lg: 2 }}
-                padding={"25px"}>
 
-                {Object.map(items =>
+        return (
+
+            <Box bgGradient='linear(to-l, #55597c, #e3d8d8)' borderRadius={20} mt={100}>
+                <SimpleGrid
+                    spacing={300}
+                    overflow={'scroll'}
+                    // columns={{ base: 1, lg: 2 }}
+                    padding={"25px"}>
+
+                    {Object.map(items =>
+
                     <Box key={items.containerId}
                         rounded='md'
-                        maxW={{ lg: "80%" }}
+                        // maxW={{ lg: "80%" }}
                         border={"4px solid brown"}
-                        bg={'whiteAlpha.600'} 
+                            bg={'whiteAlpha.600'}
                         boxShadow='outline'
                         justifyItems={"center"}
-                        m="auto"
+                            m="auto"
                         p={5}>
 
                         <Center>
                             <Image key={items.id}
                                 src={items.bgImage}
-                                w={"300px"} 
+                                    maxW={"300px"} 
                                 borderRadius={30}
                                 objectFit={"cover"} m={5}
                                 alt={items.imageDescription}
-                            />
+                                />
                         </Center>
                         <Center>
                             <Heading  key={items.text}
                                 fontSize={22} 
-                            >
+                                >
                                 {items.pgLanguage}
                             </Heading>
                         </Center>
-                        <Text fontSize={{base:'lg,', lg:'2xl'}}>{items.serviceDescription}</Text>
+                            <Text p={5} fontSize={{ base: 'lg,', lg: '2xl' }}>{items.serviceDescription}</Text>
                     </Box>
                 )}
 

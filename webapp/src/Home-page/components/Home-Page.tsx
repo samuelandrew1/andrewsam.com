@@ -1,73 +1,106 @@
-import { Box, Center, Grid, GridItem, Heading, Image, Text, } from "@chakra-ui/react"
+import { Box, Center, Flex, Heading, Image, Text, } from "@chakra-ui/react"
 import picture from '../../assets/Images/pic.jpg'
 import MySkills from "./Skill-Object"
 import { motion } from 'framer-motion'
+import {
+  Animator,
+  ScrollContainer,
+  ScrollPage,
+  batch,
+  FadeIn,
+  MoveOut,
+  MoveIn,
+  FadeOut,
+  ZoomIn,
+} from "react-scroll-motion";
+import SkillsHeader from "./SkillsHeader";
+
 interface props {
   headText: string
   subText: string
 }
+const ZoomInScrollOut = batch(
+  FadeIn(),
+  ZoomIn(),
+  MoveOut(0, 1000),
+  MoveIn(0, 1000)
 
-const HomePage = ({ headText, subText }: props) => {
-  return (
-    <>
-      <Box
-        id="home"
-        // bg='#b9bcd4'
-        maxW={{ lg: "80%", base: "90%" }}
-        m='auto'
+);
+const heading = "My skills and experience"
+const text = " Welcome to my skills page, where I showcase my frontend engineering expertise. I'm passionate about creating dynamic and user-friendly web experiences. Scroll below, you'll find a list of my skills and technologies I've mastered over the years."
+
+const HomePage = ({ headText, subText }: props) => (
+  <>
+    <Box
+      id="home"
+// bg='#b9bcd4'
+      maxW={{ lg: "80%", base: "100%", sm: '90%' }}
+      m='auto'
+      zIndex={10}
     >
-      <Box >
-          <Box bg='#c3c4c6' borderRadius={20} m={'auto'} mt={20} p={5} w={{base:'90%'}}>
+      <ScrollContainer>
 
-          <Center>
-              <Heading mt={5} p={3}>{headText}</Heading>
-            </Center>
-            <Center>
 
-            <Text fontSize='2xl'>{subText}</Text>
-            </Center>
-          </Box>
+        <ScrollPage>
+          <Animator animation={batch(MoveIn(1000, 0), FadeOut(1000, 0), FadeIn(1000, 0), MoveOut(0, 0))}>
+            <Flex direction={{ base: 'column', lg: 'row' }} bg='#9090a1' m={5} borderRadius={50} mt={50}>
 
-          <Grid templateAreas={{ base: `"img" "text"`, lg: `"img text"` }}  bg='#9090a1'  m={5} borderRadius={20}>
-          <GridItem area={"img"}>
+              <ScrollPage>
+                <Animator animation={ZoomInScrollOut}>
+                  <Image src={picture}
+                    m={"auto"}
+                    w={{ base: "90%", }}
+                    p={5}
+                    borderRadius={'50px'}
+                    overflow={"hidden"} />
 
-            <Image src={picture}
-              m={"auto"}
-              w={{ base: "90%", lg: "100%" }}
-              p={5}
-              borderRadius={'50px'}
-              overflow={"hidden"} />
 
-          </GridItem>
+                </Animator>
+              </ScrollPage>
 
-          <GridItem area={"text"}  borderRadius={20}>
-              <Center >
-              <Text p={{ lg: 10, sm: 2 }}
+              <Text p={{ lg: 10, sm: 2, base: 3 }}
                 fontSize={{ lg: "4xl", base: "2xl" }}
                 w={"90%"}
-                // lineHeight={2}
-                  as={motion.div}
+                m='auto'
+                mt={0}
+                as={motion.div}
                 animate={{
                   scale: 1,
                   x: [0, 900, 0]
                 }}
                 initial={{ x: 0 }}
                 color={'blackAlpha.800'}
-                  id="about"
-                  
+                id="about"
+
               >
 
-            Hi! My name is Andrew Samuel Tamaraprebi, I am a passionate front-end developer with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
-          </Text>
-        </Center>
-          </GridItem>
-        </Grid>
-      </Box>
-        <MySkills />
-      </Box>
-    </>
-     
-  )
-}
+                Hi! My name is Andrew Samuel Tamaraprebi, I am a passionate front-end developer with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
+              </Text>
+            </Flex>
+          </Animator>
+        </ScrollPage>
+
+        <ScrollPage>
+          <Animator animation={ZoomInScrollOut}
+          >
+            <Center>
+
+              <Heading mt={5} >{headText}</Heading>
+            </Center>
+            <Text fontSize='4xl' p={5}>{subText}</Text>
+          </Animator>
+
+        </ScrollPage>
+
+
+        <ScrollPage>
+          <SkillsHeader text={text} heading={heading} />
+        </ScrollPage>
+      </ScrollContainer>
+      <MySkills />
+    </Box>
+  </>
+
+)
 export default HomePage
 
