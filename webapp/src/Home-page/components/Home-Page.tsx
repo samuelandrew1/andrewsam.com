@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Heading, Image, Text, } from "@chakra-ui/react"
+import { Box, Center, Flex, Heading, Image, Show, Text, } from "@chakra-ui/react"
 import picture from '../../assets/Images/pic.jpg'
 import MySkills from "./Skill-Object"
 import { motion } from 'framer-motion'
@@ -43,23 +43,37 @@ const HomePage = ({ headText, subText }: props) => (
 
         <ScrollPage>
           <Animator animation={batch(MoveIn(1000, 0), FadeOut(1000, 0), FadeIn(1000, 0), MoveOut(0, 0))}>
-            <Flex direction={{ base: 'column', lg: 'row' }} bg='#9090a1' m={5} borderRadius={50} mt={50}>
+            <Flex direction={{ base: 'column', lg: 'row' }} m={5} borderRadius={50} mt={50}>
 
               <ScrollPage>
                 <Animator animation={ZoomInScrollOut}>
+                  {/* <Box> */}
+                  <Show below="lg">
+
+                    <Center m={2}>
+
+                      <Heading > frontend Enginer</Heading>
+                    </Center>
+                    <Text fontSize='lg'>
+                      Hi! My name is Andrew Samuel Tamaraprebi, I am a passionate front-end developer with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
+
+                    </Text>
+                  </Show>
                   <Image src={picture}
                     m={"auto"}
                     w={{ base: "90%", }}
                     p={5}
-                    borderRadius={'50px'}
+                    borderRadius={{lg:'50px', base:"200px"}}
                     overflow={"hidden"} />
 
 
+                  {/* </Box> */}
                 </Animator>
               </ScrollPage>
+              <Show above="lg">
 
               <Text p={{ lg: 10, sm: 2, base: 3 }}
-                fontSize={{ lg: "4xl", base: "2xl" }}
+                  fontSize={{ lg: "4xl", base: "lg" }}
                 w={"90%"}
                 m='auto'
                 mt={0}
@@ -72,10 +86,11 @@ const HomePage = ({ headText, subText }: props) => (
                 color={'blackAlpha.800'}
                 id="about"
 
-              >
+                >
 
                 Hi! My name is Andrew Samuel Tamaraprebi, I am a passionate front-end developer with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
               </Text>
+              </Show>
             </Flex>
           </Animator>
         </ScrollPage>
