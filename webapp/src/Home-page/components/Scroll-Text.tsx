@@ -9,7 +9,7 @@ const ScrolText = ({ heading, content }: props) => {
     <Box mt={50}>
       <Center>
 
-        <Heading mt={5} fontSize={25}>{heading}</Heading>
+        <Heading mt={5} fontSize={ 25}>{heading}</Heading>
       </Center>
       <Text fontSize={20} p={5}>{content}</Text>
     </Box>

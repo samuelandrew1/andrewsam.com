@@ -32,6 +32,15 @@ const visionsHeading = 'Vision'
 const visonSubText = ` to lead the way in creating web and mobile interfaces that envisioned a  to user-centric design, to  bridge the gap between cutting-edge technology and intuitive design.`
 const HomePage = () => (
   <>
+    <Show above="lg">
+
+      <Box>
+        <Center>
+          <Heading fontSize={50} mt={100}>Frontend Engineer</Heading>
+        </Center>
+
+      </Box>
+    </Show>
     <Box
       id="home"
 // bg='#b9bcd4'
@@ -56,8 +65,7 @@ const HomePage = () => (
                       <Heading > frontend Enginer</Heading>
                     </Center>
                     <Text fontSize='lg'>
-                      Hi! My name is Andrew Samuel Tamaraprebi, I am a passionate front-end developer with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
-
+                      Hi! My name is Andrew Samuel Tamaraprebi, am passionate about website development with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
                     </Text>
                   </Show>
                   <Image src={picture}
@@ -85,7 +93,7 @@ const HomePage = () => (
                 color={'blackAlpha.800'}
                   id="about"
                 >
-                Hi! My name is Andrew Samuel Tamaraprebi, I am a passionate front-end developer with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
+                Hi! My name is Andrew Samuel Tamaraprebi, am  passionate about website developement with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
               </Text>
               </Show>
             </Flex>
