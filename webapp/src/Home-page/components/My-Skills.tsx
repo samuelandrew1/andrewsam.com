@@ -3,6 +3,7 @@ import csslogo from '../../assets/Images/csslogo.png'
 import { Box, Center, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import reactlogo from '../../assets/Images/reactLogo.webp'
 import agileLogo from '../../assets/Images/agilelogo.png'
+import ScrolText from './Scroll-Text'
 
 export interface getProps {
     pgLanguage: string
@@ -64,44 +65,44 @@ const MySkills
         return (
 
             <Box bgGradient='linear(to-l, #55597c, #e3d8d8)' borderRadius={20} mt={100}>
-                <SimpleGrid 
-                    spacing={300}
-                    // columns={{ base: 1, lg: 2 }}
-                    padding={"25px"}>
+                <ScrolText heading={' SKILLED LANGUAGES'} />
+                <SimpleGrid
+                    spacing={10}
+                    padding={"10px"}>
 
                     {Object.map(items =>
 
                         <Box key={items.text}
-                        rounded='md'
-                        // maxW={{ lg: "80%" }}
-                        border={"4px solid brown"}
+                            rounded='md'
+                            maxW={{ lg: "50%" }}
+                            border={"4px solid brown"}
                             bg={'whiteAlpha.600'}
-                        boxShadow='outline'
-                        justifyItems={"center"}
+                            boxShadow='outline'
+                            justifyItems={"center"}
                             m="auto"
-                        p={5}>
+                            p={5}>
 
-                        <Center>
-                            <Image key={items.id}
-                                src={items.bgImage}
-                                    maxW={"300px"} 
-                                borderRadius={30}
-                                objectFit={"cover"} m={5}
-                                alt={items.imageDescription}
+                            <Center>
+                                <Image key={items.id}
+                                    src={items.bgImage}
+                                    maxW={"300px"}
+                                    borderRadius={30}
+                                    objectFit={"cover"} m={5}
+                                    alt={items.imageDescription}
                                 />
-                        </Center>
-                        <Center>
-                            <Heading  key={items.text}
-                                fontSize={22} 
+                            </Center>
+                            <Center>
+                                <Heading key={items.text}
+                                    fontSize={22}
                                 >
-                                {items.pgLanguage}
-                            </Heading>
-                        </Center>
+                                    {items.pgLanguage}
+                                </Heading>
+                            </Center>
                             <Text p={5} fontSize={{ base: 'lg,', lg: '2xl' }}>{items.serviceDescription}</Text>
-                    </Box>
-                )}
+                        </Box>
+                    )}
 
-            </SimpleGrid>
+                </SimpleGrid>
             </Box>
         )
     }

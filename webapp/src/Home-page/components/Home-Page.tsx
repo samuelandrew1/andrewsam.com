@@ -1,6 +1,6 @@
 import { Box, Center, Flex, Heading, Image, Show, Text, } from "@chakra-ui/react"
 import picture from '../../assets/Images/pic.jpg'
-import MySkills from "./Skill-Object"
+import MySkills from "./My-Skills"
 import { motion } from 'framer-motion'
 import {
   Animator,
@@ -103,12 +103,8 @@ const HomePage = () => (
           <SkillsHeader text={skillsText} heading={heading} />
         </ScrollPage>
 
-
-
-      
-
+        <MySkills />
       </ScrollContainer>
-      <MySkills />
     </Box>
   </>
 

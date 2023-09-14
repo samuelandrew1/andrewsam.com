@@ -1,5 +1,5 @@
 import { Box, Text, Image } from "@chakra-ui/react"
-import { getProps } from "./Skill-Object"
+import { getProps } from "./My-Skills"
 
 interface props {
     getSkills: getProps

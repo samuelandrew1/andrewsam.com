@@ -1,8 +1,8 @@
 import { Box, Center, Heading, Text } from "@chakra-ui/react"
 
 interface props {
-  heading: string
-  content: string
+  heading?: string
+  content?: string
 }
 const ScrolText = ({ heading, content }: props) => {
   return (

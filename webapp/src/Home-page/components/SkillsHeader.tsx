@@ -18,7 +18,7 @@ const SkillsHeader = ({ text, heading }: props) => {
         <Center p={5}>
             <Heading  p={5}mt={10} bg='#2f304c' color='#e3d8d8' borderRadius={20}>{heading}</Heading>
             </Center>
-            <Text p={10}  fontSize='4xl'>{text }</Text>
+                    <Text p={10} fontSize={{ base: '2xl' ,lg: '4xl' }}>{text }</Text>
                 </Animator>
             </Box>
         </ScrollPage>
