@@ -62,7 +62,7 @@ const HomePage = () => (
 
                     <Center m={2}>
 
-                      <Heading > frontend Enginer</Heading>
+                      <Heading > Frontend Engineer</Heading>
                     </Center>
                     <Text fontSize='lg'>
                       Hi! My name is Andrew Samuel Tamaraprebi, am passionate about website development with a penchant for turning ideas into captivating experiences. From designing elegant interfaces to crafting clean code, I thrive on bringing visions to life.
