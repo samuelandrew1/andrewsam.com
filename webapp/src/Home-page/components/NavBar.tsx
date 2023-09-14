@@ -1,6 +1,5 @@
 import {
   Button,
-  Flex,
   HStack,
   List,
   ListItem,
@@ -61,7 +60,6 @@ const NavBar = ({ navbar, }: props) => {
                 _active={{ color: "red" }}
                 mr={"50px"}
                 >
-
                   <HStack key={"FLEX BOX"}>                
                     <Button leftIcon={nav.icon}
                       py={4}
@@ -74,11 +72,7 @@ const NavBar = ({ navbar, }: props) => {
             </ListItem>
             </Link>
          </List>
-          
-            ))}
-              
-          
-      
+            ))}     
     </HStack>
   );
 };

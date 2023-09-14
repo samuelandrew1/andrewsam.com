@@ -64,15 +64,14 @@ const MySkills
         return (
 
             <Box bgGradient='linear(to-l, #55597c, #e3d8d8)' borderRadius={20} mt={100}>
-                <SimpleGrid
+                <SimpleGrid 
                     spacing={300}
-                    overflow={'scroll'}
                     // columns={{ base: 1, lg: 2 }}
                     padding={"25px"}>
 
                     {Object.map(items =>
 
-                    <Box key={items.containerId}
+                        <Box key={items.text}
                         rounded='md'
                         // maxW={{ lg: "80%" }}
                         border={"4px solid brown"}

@@ -14,22 +14,23 @@ import {
   ZoomIn,
 } from "react-scroll-motion";
 import SkillsHeader from "./SkillsHeader";
+import ScrolText from "./Scroll-Text";
 
-interface props {
-  headText: string
-  subText: string
-}
+
 const ZoomInScrollOut = batch(
   FadeIn(),
   ZoomIn(),
-  MoveOut(0, 1000),
-  MoveIn(0, 1000)
+  MoveOut(0, 500),
+  MoveIn(0, 500)
 
 );
 const heading = "My skills and experience"
-const text = " Welcome to my skills page, where I showcase my frontend engineering expertise. I'm passionate about creating dynamic and user-friendly web experiences. Scroll below, you'll find a list of my skills and technologies I've mastered over the years."
-
-const HomePage = ({ headText, subText }: props) => (
+const skillsText = " Welcome to my skills page, where I showcase my frontend engineering expertise. I'm passionate about creating dynamic and user-friendly web experiences. Scroll below, you'll find a list of my skills and technologies I've mastered over the years."
+const missionText = 'Mission'
+const missionSubtext = ' committed to delivering exceptional frontend engineering solutions that redefine user experiences To create  websites that are visually stunning and easy to navigate in all aspects of development, from basic syntax to complex layouts and responsive design.'
+const visionsHeading = 'Vision'
+const visonSubText = ` to lead the way in creating web and mobile interfaces that envisioned a  to user-centric design, to  bridge the gap between cutting-edge technology and intuitive design.`
+const HomePage = () => (
   <>
     <Box
       id="home"
@@ -92,17 +93,20 @@ const HomePage = ({ headText, subText }: props) => (
         </ScrollPage>
 
         <ScrollPage>
-          <Animator animation={ZoomInScrollOut}
-          >
-            <Center>
-              <Heading mt={5} >{headText}</Heading>
-            </Center>
-            <Text fontSize='4xl' p={5}>{subText}</Text>
+          <Animator animation={batch(MoveIn(0,-100))}>
+            <ScrolText heading={missionText} content={missionSubtext} /> 
+            <ScrolText heading={ visionsHeading} content={visonSubText} /> 
           </Animator>
         </ScrollPage>
+        
         <ScrollPage>
-          <SkillsHeader text={text} heading={heading} />
+          <SkillsHeader text={skillsText} heading={heading} />
         </ScrollPage>
+
+
+
+      
+
       </ScrollContainer>
       <MySkills />
     </Box>

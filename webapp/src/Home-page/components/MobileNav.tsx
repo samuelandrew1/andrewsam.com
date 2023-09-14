@@ -25,18 +25,23 @@ import { FcHome } from "react-icons/fc";
 
 const ikon: IconType = HiOutlineMenu
 
-function MobileNav({ navbar }: props) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [active, setActive] = useState(-1);
 
+function MobileNav({ navbar }: props) {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [active, setActive] = useState(-1);
   return (
     <HStack p={"10px"}>
       <Link to='/'>
         <Button leftIcon={<FcHome />} variant='link' fontSize={20} marginLeft={20}>Andrew samuel T.</Button>
       </Link>
       <Spacer />
-      <Icon as={ikon} color="white" onClick={onOpen} boxSize={"50px"} />
-      <Drawer isOpen={isOpen} placement="right" onClose={onClose} >
+      <Icon as={ikon} color="white"
+        onClick={onOpen}
+        boxSize={"50px"} />
+
+      
+      <Drawer
+        isOpen={isOpen} placement="right" onClose={onClose} >
         <DrawerOverlay color={"white"} />
         <DrawerContent onClick={onClose} bg='#2f304c'>
           <DrawerCloseButton bg='#e3d8d8' />
@@ -69,11 +74,8 @@ function MobileNav({ navbar }: props) {
                       }}
                       _active={{ color: "red" }}
                       mr={"50px"}
-
                     >
-
                       <Flex key={"FLEX BOX"} alignContent={"center"}>
-
                         <Show above="lg">
                           <Spacer />
                         </Show>
@@ -94,7 +96,6 @@ function MobileNav({ navbar }: props) {
               );
             })}
           </DrawerBody>
-
           <DrawerFooter>
             <Button mr={3}bg='#e3d8d8' onClick={onClose} color='#2f304c'>
               Cancel
@@ -102,6 +103,8 @@ function MobileNav({ navbar }: props) {
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
+
+    
     </HStack>
   );
 }
