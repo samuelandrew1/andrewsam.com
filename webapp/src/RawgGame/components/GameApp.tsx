@@ -15,12 +15,11 @@ import NavObject from "../../Home-page/components/Nav-Object";
 export interface GameQuery {
   genres: genres_props | null
   platform: platform | null
-  sortOrder: string
+  sortOrder: string 
   searchInput: string
 }
 const GameApp = () => {
   const [GameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
-
   return (
     <Box>
       <Grid templateAreas={{ lg: `"nav nav" "side main"`, base: `"nav" "main"` }} >
@@ -57,7 +56,6 @@ const GameApp = () => {
       <Outlet />
     </Grid>
       <Footer footerItems={NavObject} />
-
     </Box>
   );
 };
