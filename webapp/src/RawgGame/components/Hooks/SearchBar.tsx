@@ -14,15 +14,12 @@ const SearchBar = ({ onsearch }: props) => {
             e.preventDefault()
             if (searchRef.current) onsearch(searchRef.current.value)
         }}>
-
-            <InputGroup mt={5} >
+            <InputGroup mt={20} >
                 <InputLeftElement children={<BsSearch />} />
                 <Input ref={searchRef} type="search" variant={'filled'} borderRadius={20} placeholder="search games...." />
                 <InputRightElement >
                     <Button type="submit" children={<FaSearchPlus size={'lg'} />} />
                 </InputRightElement>
-
-
             </InputGroup>
         </form>
     )

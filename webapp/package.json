@@ -11,6 +11,7 @@
     "preview": "vite preview --port 8080"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.7.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -19,6 +20,7 @@
     "bootstrap": "^5.3.1",
     "formik": "^2.4.3",
     "framer-motion": "^10.15.0",
+    "mdb-react-ui-kit": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.2",
@@ -29,6 +31,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.30",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@types/react-router-hash-link": "^2.4.6",
