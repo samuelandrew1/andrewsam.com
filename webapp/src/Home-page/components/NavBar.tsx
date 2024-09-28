@@ -1,38 +1,37 @@
 import {
-  Button,
   HStack,
-  List,
-  ListItem,
-  Spacer,
+  Button,
+  Icon,
   Drawer,
-  DrawerBody,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  List,
+  ListItem,
+  Spacer,
+
   useDisclosure,
   useBreakpointValue,
-  VStack,
 } from "@chakra-ui/react";
-import { ReactElement, useState, useEffect } from "react";
 import { FcHome } from "react-icons/fc";
+import { HiOutlineMenu } from "react-icons/hi";
+import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { HiOutlineMenu } from 'react-icons/hi';
 
-export interface nav {
-  tooltip: string;
-  icon: ReactElement<any, any>;
+interface NavItem {
   id: number;
   text: string;
   link: string;
+  icon: JSX.Element;
 }
 
-export interface props {
-  navbar: nav[];
-  onClick?: () => void;
+interface NavBarProps {
+  navbar: NavItem[];
 }
 
-const NavBar = ({ navbar }: props) => {
+const NavBar = ({ navbar }: NavBarProps) => {
   const [active, setActive] = useState(-1);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -43,20 +42,19 @@ const NavBar = ({ navbar }: props) => {
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   }, [location]);
-
   const handleNavigation = (index: number, link: string) => {
     setActive(index);
-    if (link.startsWith('#')) {
-      if (location.pathname !== '/') {
-        navigate('/' + link);
+    if (link.startsWith("#")) {
+      if (location.pathname !== "/") {
+        navigate("/" + link);
       } else {
         const element = document.getElementById(link.substring(1));
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
       }
     } else {
@@ -65,35 +63,51 @@ const NavBar = ({ navbar }: props) => {
   };
 
   return (
-    <HStack>
+    <HStack p={"10px"} w="100%" bg="#2f304c" boxShadow="sm">
       <Link to="/">
         <Button
           leftIcon={<FcHome />}
           fontSize={"2xl"}
           variant="link"
           color={"white"}
-          marginLeft={"50px"}
+          fontWeight="bold"
+          _hover={{ textDecoration: "none", color: "#f2a365" }}
+          marginLeft={"20px"}
         >
-          Andrew S.T
+          Concept Technologies
         </Button>
       </Link>
       <Spacer />
       {isMobile ? (
         <>
-          <Button variant={'unstyled'}
-            aria-label="Open Menu"
+          <Icon
             as={HiOutlineMenu}
             onClick={onOpen}
-            color={"white"}
-            mr={"50px"}
+            color="white"
+            boxSize={"40px"}
+            cursor="pointer"
+            _hover={{ color: "#f2a365" }}
+            mr="20px"
+            transition="color 0.3s ease"
           />
-          <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+          <Drawer placement="right" onClose={onClose} isOpen={isOpen} size="xs">
             <DrawerOverlay />
-            <DrawerContent>
-              <DrawerCloseButton />
-              <DrawerHeader>Navigation</DrawerHeader>
+            <DrawerContent bg="#2f304c" color="white">
+              <DrawerCloseButton color="white" />
+              <DrawerHeader borderBottomWidth="1px" borderColor="#f2a365">
+                <Button
+                  leftIcon={<FcHome />}
+                  fontSize={"xl"}
+                  variant="link"
+                  color={"white"}
+                  fontWeight="bold"
+                  _hover={{ textDecoration: "none", color: "#f2a365" }}
+                >
+                  Andrew S.T
+                </Button>
+              </DrawerHeader>
               <DrawerBody>
-                <List>
+                <List spacing={4}>
                   {navbar.map((nav, index) => (
                     <ListItem
                       key={nav.id}
@@ -102,21 +116,23 @@ const NavBar = ({ navbar }: props) => {
                         handleNavigation(index, nav.link);
                         onClose(); // Close the drawer on link click
                       }}
-                      color={active === index ? "messenger.500" : "black"}
+                      bg={active === index ? "#3b5998" : "transparent"}
                       borderRadius={"10px"}
                       cursor={"pointer"}
+                      transition="background 0.3s ease"
                       _hover={{
-                        opacity: 0.8,
+                        bg: "#f2a365",
                       }}
-                      _active={{ color: "red" }}
-                      mb={"10px"}
                     >
                       <HStack>
                         <Button
                           leftIcon={nav.icon}
-                          py={4}
-                          colorScheme={active === index ? "messenger" : "black"}
+                          py={2}
+                          colorScheme={active === index ? "messenger" : "whiteAlpha"}
                           variant="ghost"
+                          color="white"
+                          fontWeight="medium"
+                          _hover={{ color: "white" }}
                         >
                           {nav.text}
                         </Button>
@@ -129,32 +145,24 @@ const NavBar = ({ navbar }: props) => {
           </Drawer>
         </>
       ) : (
-        <HStack>
+        <HStack spacing={8} mr="20px">
           {navbar.map((nav, index) => (
-            <ListItem
+            <Button
               key={nav.id}
-              p={"10px"}
+              leftIcon={nav.icon}
+              py={4}
+              colorScheme={active === index ? "messenger" : "whiteAlpha"}
+              variant="ghost"
               onClick={() => handleNavigation(index, nav.link)}
-              color={"white"}
-              borderRadius={"10px"}
-              cursor={"pointer"}
+              color="white"
+              fontWeight="medium"
               _hover={{
-                opacity: 0.8,
+                color: "#f2a365",
               }}
-              _active={{ color: "red" }}
-              mr={"50px"}
+              transition="color 0.3s ease"
             >
-              <VStack>
-                <Button
-                  leftIcon={nav.icon}
-                  py={4}
-                  colorScheme={active === index ? "messenger" : "black"}
-                  variant="ghost"
-                >
-                  {nav.text}
-                </Button>
-              </VStack>
-            </ListItem>
+              {nav.text}
+            </Button>
           ))}
         </HStack>
       )}

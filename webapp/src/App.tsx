@@ -9,6 +9,8 @@ import ExpenseApp from "./ExpenseTraker/components/ExpenseApp";
 import BlogHome from "./Blog-Page/Blog-Home";
 import ProjectHome from "./Home-page/Project-Page/Project-Home";
 import projecObject from "./Home-page/Project-Page/Project-Object";
+import './assets/css/style.css'
+
 
 function App() {
   function handleClick() {
@@ -17,7 +19,7 @@ function App() {
 
   }
   return (
-    <Grid templateAreas={{ lg: `"nav " " main"`, base: `"nav" "main"` }}>
+    <Grid templateAreas={{ lg: `"nav " " main"`,}}>
       {/* nav bar */}
       <GridItem
         area="nav"
@@ -29,7 +31,7 @@ function App() {
         bg='#2f304c'
         >   
         {/* nav bar */}
-          <NavBar navbar={NavObject} onClick={handleClick} />
+          <NavBar navbar={NavObject}  />
       </GridItem>
 
       {/* main page */}
