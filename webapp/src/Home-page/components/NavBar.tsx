@@ -11,7 +11,6 @@ import {
   List,
   ListItem,
   Spacer,
-
   useDisclosure,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -64,7 +63,7 @@ const NavBar = ({ navbar }: NavBarProps) => {
 
   return (
     <HStack p={"10px"} w="100%" bg="#2f304c" boxShadow="sm">
-      <Link to="/">
+      <Link to="/"  onClick={() => window.location.href ='/'}>
         <Button
           leftIcon={<FcHome />}
           fontSize={"2xl"}
@@ -73,6 +72,7 @@ const NavBar = ({ navbar }: NavBarProps) => {
           fontWeight="bold"
           _hover={{ textDecoration: "none", color: "#f2a365" }}
           marginLeft={"20px"}
+          
         >
           Concept Technologies
         </Button>
@@ -103,7 +103,7 @@ const NavBar = ({ navbar }: NavBarProps) => {
                   fontWeight="bold"
                   _hover={{ textDecoration: "none", color: "#f2a365" }}
                 >
-                  Andrew S.T
+                  Concept Technologies
                 </Button>
               </DrawerHeader>
               <DrawerBody>

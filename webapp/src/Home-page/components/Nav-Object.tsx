@@ -17,7 +17,7 @@ interface NavItem {
 
 export const NavObject: NavItem[] = [
   {
-    text: "About me",
+    text: "About",
     icon: <FcAbout />,
     id: 0,
     link: '#about'
@@ -27,7 +27,7 @@ export const NavObject: NavItem[] = [
 
     icon: <FcNews />,
     id: 1,
-    link: "/blog",
+    link: "blog",
   },
   {
     text: "Contact",

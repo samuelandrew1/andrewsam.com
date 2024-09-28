@@ -4,8 +4,7 @@ const HomeApp = () => {
 
 
     return (
-        <>
- 
+<>
  <header className="header pos-re slider-fade" data-scroll-index="0">
 <div className="owl-carousel owl-theme">
     <div className="item bg-img" data-overlay-dark="5" data-background="src/assets/img/bg4.jpg">
@@ -52,11 +51,9 @@ const HomeApp = () => {
     </div>
 </div>
 </header>
-
-
     <div className="why-us section-padding bg-gray pos-re">
     <div className="container">
-        <div className="row">                   
+        <div className="row">            
             <div className="col-lg-6">
                 <div className="img mb-md50">
                     <img src={pic} alt=""/>
@@ -189,6 +186,9 @@ const HomeApp = () => {
                     </div>
 
                 </div>
+                <a href="#0" className="butn butn-bg m-5">
+                                <span>Get Started</span>
+                            </a>
             </div>
 
             <div className="curve curve-gray-t curve-top"></div>
@@ -213,16 +213,7 @@ const HomeApp = () => {
                                 <h5>Web Design</h5>
                                 <h6>Modern & Clean Design</h6>
                                 <p>Craft responsive and dynamic websites that offer an excellent user experience and align with your business goals.</p>
-                                
-                                <div>
-                                <h5>key Features</h5>
-                                <ul className="list-group">
-                                    <li className="list-group-item">Responsive Design</li>
-                                    <li className="list-group-item">Search engine optimization (SEO)</li>
-                                    <li className="list-group-item">Accessibility</li>
-                                    <li className="list-group-item">Easy navigation</li>
-                                </ul>
-                                </div>
+                       
                             </div>
                         </div>
 
@@ -232,21 +223,7 @@ const HomeApp = () => {
                                 <h5>Custom Software Development</h5>
                                 <h6>web and Mobile application</h6>
                                 <p>Build tailor-made software solutions designed to meet your specific business needs.
-                                </p>
-
-                                <div>
-                                <h5>key Features</h5>
-                                <ul className="list-group">
-                                    <li className="list-group-item">Responsive Design</li>
-                                    <li className="list-group-item">Search engine optimization (SEO)</li>
-                                    <li className="list-group-item">Accessibility</li>
-                                    <li className="list-group-item">security</li>
-                                    <li className="list-group-item">Content Management System (CMS)</li>
-                                    <li className="list-group-item">E-Commerce Capabilities</li>
-                                    <li className="list-group-item">Scalability And Future-Proofing</li>
-                                    <li className="list-group-item">Integration Capabilities</li>
-                                </ul>
-                                </div>
+                                </p>                        
                             </div>
                         </div>
 
@@ -265,11 +242,10 @@ const HomeApp = () => {
                 <div className="curve curve-gray-b curve-bottom"></div>
             </div>
 
-            <div className="tabs-section section-padding bg-gray">
+            <div className="tabs-section section-padding bg-gray" id='about'>
                 <div className="container">
                     <div className="row">
-
-                        <ul className="col-md-12 nav nav-pills tabs" id="pills-tab" role="tablist">
+                        <ul className="col-md-12 nav nav-pills tabs" id="pills-tab" role="tablist" >
                             <li className="nav-item one active">
                                 <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">About Us</a>
                             </li>
@@ -290,9 +266,6 @@ const HomeApp = () => {
                                             <h6 className="sub-title">Company Overview</h6>
                                             <p>Concept Technologies and Software Solutions has grown into a leading provider of custom software and technology solutions. We are dedicated to helping businesses navigate the digital landscape, offering services that drive productivity, innovation, and success. Our focus is to build long-term partnerships with clients by delivering solutions that add real value to their business.
                                             </p>
-
-                                        
-
                                             <div className="skills mt-40">
                                                 <div className="skill-item mb-30">
                                                     <h6>Website Design</h6>
@@ -377,9 +350,9 @@ const HomeApp = () => {
                                     </div>
                                     <div className="col-lg-6 image">
                                         <div className="img owl-carousel owl-theme carousel-single">
-                                            <img src="img/4.jpg" alt=""/>
-                                            <img src="img/5.jpg" alt=""/>
-                                            <img src="img/2.jpg" alt=""/>
+                                            <img src="src/assets/img/4.jpg" alt=""/>
+                                            <img src="src/assets/img/5.jpg" alt=""/>
+                                            <img src="src/assets/img/2.jpg" alt=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -392,11 +365,9 @@ const HomeApp = () => {
         </section>
 
 
-
         <section className="call-action section-padding bg-img bg-fixed" data-overlay-dark="5" data-background="img/bg2.jpg">
             <div className="container">
-                <div className="row">
-                    
+                <div className="row">           
                     <div className="col-lg-12">
                         <div className="text-center">
                             <h2>Want to work with us?</h2>
@@ -418,8 +389,8 @@ const HomeApp = () => {
            <div className="container">
                <div className="row">
                     <div className="section-head offset-md-2 col-md-8 offset-lg-3 col-lg-6">
-                        <h4>Get <span>In</span> Touch</h4>
-                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Whether you have a question, a project proposal, or just want to say hello, feel free to reach out!</p>
+                        <h4>Con<span>tact</span> us</h4>
+                        <p>We're always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Whether you have a question, a project proposal, or just want to say hello, feel free to reach out!</p>
                     </div>                  
                     <div className="col-lg-5">
                         <div className="contact-info mb-md50">
@@ -436,7 +407,7 @@ const HomeApp = () => {
                                 <span className="icon icon-basic-mail-open-text"></span>
                                 <div className="cont">
                                     <h6>Email : </h6>
-                                    <p>samuelandrew145@gmailcom</p>
+                                    <p>samuelandrew145@gmail.com</p>
                                 </div>
                             </div>
                             <div className="item">

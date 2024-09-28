@@ -37,7 +37,7 @@ const ExpenseApp = () => {
 
     return (
         <>
-            <Link to='/'>
+            <Link to='/' onClick={() => window.location.href ='/'}>
             <Button >back</Button>
             </Link>
             <ExpenseHeader />

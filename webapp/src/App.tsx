@@ -9,15 +9,9 @@ import ExpenseApp from "./ExpenseTraker/components/ExpenseApp";
 import BlogHome from "./Blog-Page/Blog-Home";
 import ProjectHome from "./Home-page/Project-Page/Project-Home";
 import projecObject from "./Home-page/Project-Page/Project-Object";
-import './assets/css/style.css'
 
 
 function App() {
-  function handleClick() {
-    console.log(" ")
-
-
-  }
   return (
     <Grid templateAreas={{ lg: `"nav " " main"`,}}>
       {/* nav bar */}
@@ -31,7 +25,7 @@ function App() {
         bg='#2f304c'
         >   
         {/* nav bar */}
-          <NavBar navbar={NavObject}  />
+        <NavBar navbar={NavObject}/>
       </GridItem>
 
       {/* main page */}
@@ -45,8 +39,7 @@ function App() {
           <Route path="gamehub" element={<GameApp />} />
           <Route path="expenseTracker" element={<ExpenseApp />} />
         </Routes> 
-      </GridItem>
-  
+      </GridItem>  
     </Grid>
   );
 }
