@@ -4,11 +4,11 @@ import BlogCard from "./BlogCard"
 
 
 
+
 export const BlogHome = () => {
   const { data } = useNews()
   return (
     <Box mt={50}>
-
       {data.map((news: any) =>
         <BlogCard cardContents={news} key={news} />
       )}

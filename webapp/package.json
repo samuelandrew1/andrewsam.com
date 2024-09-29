@@ -30,6 +30,7 @@
     "react-router-dom": "^6.14.1",
     "react-router-hash-link": "^2.4.3",
     "react-scroll-motion": "^0.3.2",
+    "swiper": "^11.1.14",
     "zod": "^3.21.4"
   },
   "devDependencies": {
