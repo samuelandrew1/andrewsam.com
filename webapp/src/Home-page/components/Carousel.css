@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* Styling specific to the carousel */
+#custom-carousel {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#custom-carousel .owl-carousel .item.bg-img {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+#custom-carousel .caption {
+  color: white;
+}
+
+#custom-carousel .v-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+/* Button Styling */
+#custom-carousel .butn {
+  padding: 8px 18px;
+  border-radius: 5px;
+  font-weight: 400; /* Regular weight for button */
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+#custom-carousel .butn-light {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+#custom-carousel .butn-light:hover {
+  background-color: #f0f0f0;
+}
+
+/* Owl Carousel Dots Styling */
+#custom-carousel .owl-dots {
+  text-align: center;
+}
+
+#custom-carousel .owl-dot {
+  display: inline-block;
+  margin: 5px;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#custom-carousel .owl-dot.active {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Responsive Typography Specific to Carousel */
+#custom-carousel h1 {
+  font-size: 2rem; 
+  font-weight: 600; /* Bold for headings */
+  margin-bottom: 20px;
+}
+
+#custom-carousel h4 {
+  font-size: 1.2rem; 
+  font-weight: 400; /* Regular weight for subheadings */
+  margin-bottom: 15px;
+}
+
+#custom-carousel p {
+  font-size: 1rem; 
+  font-weight: 300; /* Light weight for paragraphs */
+  margin-bottom: 20px;
+}
+
+/* Media Queries for Different Screen Sizes */
+@media (max-width: 576px) {
+  #custom-carousel h1 {
+    font-size: 1.5rem;
+  }
+
+  #custom-carousel h4 {
+    font-size: 1rem;
+  }
+
+  #custom-carousel p {
+    font-size: 0.9rem;
+  }
+
+  #custom-carousel .butn {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  #custom-carousel h1 {
+    font-size: 1.8rem;
+  }
+
+  #custom-carousel h4 {
+    font-size: 1.1rem;
+  }
+
+  #custom-carousel p {
+    font-size: 0.95rem;
+  }
+
+  #custom-carousel .butn {
+    font-size: 0.85rem;
+    padding: 7px 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  #custom-carousel h1 {
+    font-size: 2.5rem;
+  }
+
+  #custom-carousel h4 {
+    font-size: 1.3rem;
+  }
+
+  #custom-carousel p {
+    font-size: 1.1rem;
+  }
+
+  #custom-carousel .butn {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+}

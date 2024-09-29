@@ -1,113 +1,12 @@
 import pic from '../../assets/Images/pic.jpg'
+import CarouselComponent from './Carousel'
 
 const HomeApp = () => {
 
 
     return (
 <>
- {/* <header className="header pos-re slider-fade" data-scroll-index="0">
-<div className="owl-carousel owl-theme">
-    <div className="item bg-img" data-overlay-dark="5" data-background="src/assets/img/bg4.jpg">
-        <div className="text-center v-middle caption mt-30">
-            <h4>we</h4>
-            <h1>Drive Innovation</h1>
-            <div className="row">
-                <div className="offset-md-1 col-md-10 offset-lg-2 col-lg-8">
-                    <p>Building seamless digital ecosystems to drive efficiency and growth.</p>
-                </div>
-            </div>
-            <a href="#0" className="butn butn-light mt-30">
-                <span>Explore Our Services</span>
-            </a>
-        </div>
-    </div>
-    <div className="item bg-img" data-overlay-dark="5" data-background="src/assets/img/bg1.jpg">
-        <div className="text-center v-middle caption mt-30">
-            <h4>Empower Businesses</h4>
-            <h1> Through Cutting-Edge Technologies</h1>
-            <div className="row">
-                <div className="offset-md-1 col-md-10 offset-lg-2 col-lg-8">
-                    <p>Harnessing the latest in technology to elevate business performance.</p>
-                </div>
-            </div>
-            <a href="#0" className="butn butn-light mt-30">
-                <span>Explore Our Services</span>
-            </a>
-        </div>
-    </div>
-    <div className="item bg-img" data-overlay-dark="5" data-background="src/assets/img/bg2.jpg">
-        <div className="text-center v-middle caption mt-30">
-            <h4>Transforming Ideas</h4>
-            <h1>into Digital Solutions with Advanced Technologies</h1>
-            <div className="row">
-                <div className="offset-md-1 col-md-10 offset-lg-2 col-lg-8">
-                    <p>From concept to execution, delivering tailored software solutions for modern challenges.</p>
-                </div>
-            </div>
-            <a href="#0" className="butn butn-light mt-30">
-                <span>Explore Our Services</span>
-            </a>
-        </div>
-    </div>
-</div>
-</header> */}
-
-
-<div id="carouselExampleCaptions" className="carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init>
-  <div className="carousel-indicators">
-    <button
-      type="button"
-      data-mdb-target="#carouselExampleCaptions"
-      data-mdb-slide-to="0"
-      className="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselExampleCaptions"
-      data-mdb-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselExampleCaptions"
-      data-mdb-slide-to="2"
-      aria-label="Slide 3"
-    ></button>
-  </div>
-  <div className="carousel-inner">
-    <div className="carousel-item active">
-      <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" className="d-block w-100" alt="Wild Landscape"/>
-      <div className="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
-    </div>
-    <div className="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" className="d-block w-100" alt="Camera"/>
-      <div className="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-    <div className="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" className="d-block w-100" alt="Exotic Fruits"/>
-      <div className="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
-    </div>
-  </div>
-  <button className="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="prev">
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Previous</span>
-  </button>
-  <button className="carousel-control-next" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="next">
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Next</span>
-  </button>
-</div>
+<CarouselComponent/>
     <div className="why-us section-padding bg-gray pos-re">
     <div className="container">
         <div className="row">            
@@ -517,7 +416,7 @@ const HomeApp = () => {
                </div>
            </div>
        </section>
-    </>
+</>
 )
 }
 export default HomeApp
