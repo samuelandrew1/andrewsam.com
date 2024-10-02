@@ -268,7 +268,7 @@ const HomeApp = () => {
                                     </div>
                                     <div className="col-lg-6 image">
                                         <div className="img">
-                                            <img src="img/3.jpg" alt=""/>
+                                            <img src="/src/assets/img/3.jpg" alt=""/>
                                             <a className="vid" href="https://vimeo.com/127203262">
                                                 <span className="vid-butn">
                                                     <i className="fas fa-play-circle"></i>
@@ -303,14 +303,7 @@ const HomeApp = () => {
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
-                                    <div className="col-lg-6 image">
-                                        <div className="img owl-carousel owl-theme carousel-single">
-                                            <img src="src/assets/img/4.jpg" alt=""/>
-                                            <img src="src/assets/img/5.jpg" alt=""/>
-                                            <img src="src/assets/img/2.jpg" alt=""/>
-                                        </div>
-                                    </div>
+                                    </div>                       
                                 </div>
                             </div>
                         </div>
