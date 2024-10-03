@@ -90,7 +90,7 @@ const ContactForm: React.FC = () => {
                         {...register("name", { required: "Name is required" })}
                         placeholder="Name"
                       />
-                      {errors.name && <span className="error">{errors.name.message}</span>}
+                      {errors.name && <span className="text-danger">{errors.name.message}</span>}
                     </div>
                   </div>
                   <div className="col-md-6">

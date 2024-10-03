@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import img2 from '../../assets/img/2.jpg';
+import logo from '../../assets/Images/logo.jpg'
 import img4 from '../../assets/img/4.jpg';
 import img3 from '../../assets/img/3.jpg';
 import styles from './TabsSection.module.css';
@@ -77,7 +77,11 @@ const TabsSection = () => {
                     <h5 className="title">About Us</h5>
                     <h6 className="sub-title">Company Overview</h6>
                     <p>
-                      Concept Technologies and Software Solutions has grown into a leading provider...
+                    Concept Technology and Software Solutions is a full-service technology firm specializing in custom software development, web design, IT consulting, and digital solutions. Established with a vision to empower businesses through innovative technology, we strive to bring imagination to reality by transforming ideas into functional, scalable, and efficient digital products.
+
+At Concept Technology, we believe that technology should serve as a bridge between your business and success. We collaborate closely with our clients to understand their needs, helping them visualize and bring their ideas to life. From the initial concept to the final product, we handle every step of the process with precision, creativity, and care.
+
+Our team of dedicated experts combines industry knowledge, technical expertise, and creativity to craft unique solutions that are tailored to your business. Whether you need a custom e-commerce platform, a sleek corporate website, or an entire IT infrastructure, our goal is to deliver solutions that not only meet but exceed expectations.
                     </p>
                     <div className={`skills mt-40 ${styles.skills}`}>
                       <div className={`skill-item mb-30 ${styles['skill-item']}`}>
@@ -108,7 +112,14 @@ const TabsSection = () => {
                   </div>
                 </div>
                 <div className={`col-lg-6 ${styles.image}`}>
-                  <img src={img2} alt="About us" />
+                  <img src={logo} alt="About us" />
+
+                     <div className='p-4'>
+                        <p className='m-5'>At Concept Technology and Software Solutions, we don’t just develop software; we help you turn your ideas into reality. Whether you have a clear vision or need guidance on how to transform your business digitally, we are here to make it happen.</p>
+                        <a href="#0" className="butn butn-bg mt-4">
+                         <span>Get Started</span>
+                        </a>
+                  </div> 
                 </div>
               </div>
             </div>
@@ -121,18 +132,23 @@ const TabsSection = () => {
                 <div className={`left col-lg-6 ${styles.mission}`}>
                   <div className="box-white content-box">
                     <h5 className="title">Our Mission</h5>
-                    <p>To empower businesses with cutting-edge technology solutions...</p>
+                   <p>Our mission is to deliver cutting-edge, tailor-made technology solutions that align with our clients' visions and business goals. We are committed to excellence, innovation, and customer satisfaction, providing high-quality software, web development, and IT consulting services that enable businesses to thrive in the digital age. Through collaboration, creativity, and technical expertise, we aim to transform concepts into powerful, functional solutions that drive success and sustainability.</p>
                     <h5 className="title">Our Vision</h5>
-                    <p>To be the go-to technology partner...</p>
+                    <p>
+                    To be a global leader in providing innovative technology solutions that empower businesses to turn their ideas into impactful digital realities, fostering growth and transformation in a rapidly evolving digital world.
+                    </p>
                   </div>
                 </div>
                 <div className={`col-lg-6 ${styles.image}`}>
                   <img src={img3} alt="Our mission" />
-                  <a className={styles.vid} href="https://vimeo.com/127203262">
-                    <span className={styles['vid-butn']}>
-                      <i className="fas fa-play-circle"></i>
-                    </span>
-                  </a>
+
+
+                  {/* <div className='p-4'>
+                        <p className='m-5'>At Concept Technology and Software Solutions, we don’t just develop software; we help you turn your ideas into reality. Whether you have a clear vision or need guidance on how to transform your business digitally, we are here to make it happen.</p>
+                        <a href="#0" className="butn butn-bg mt-4">
+                         <span>Get Started</span>
+                        </a>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -146,14 +162,33 @@ const TabsSection = () => {
                   <div className="box-white content-box">
                     <h5 className="title">Why Us?</h5>
                     <ul className="feat">
-                      <li><i className="icon fas fa-lightbulb"></i> Innovative Solutions</li>
-                      <li><i className="icon fas fa-headset"></i> Expert Support</li>
-                      <li><i className="icon fas fa-users"></i> Client-Centric Approach</li>
+                      <li><i className="icon fas fa-lightbulb"></i> Tailored Solutions
+                      <p>We work closely with you to understand your needs and provide personalized solutions that match your vision.</p>
+                      </li>
+
+                      <li><i className="icon fas fa-headset"></i> Expert Team
+                      <p>Our team consists of experienced developers, designers, and IT professionals with a passion for technology and innovation.</p>
+                      </li>
+
+                      <li><i className="icon fas fa-users"></i> Client-Centric Approach
+                      <p> Your success is our priority. We value collaboration, communication, and transparency throughout every stage of development.</p>
+                      </li>
+
+                      <li><i className="icon fas fa-users"></i> Commitment to Excellence:
+                      <p>We are committed to delivering top-notch services, ensuring quality, functionality, and scalability in every project.</p>
+                      </li>
                     </ul>
                   </div>
                 </div>
                 <div className={`col-lg-6 ${styles.image}`}>
                   <img src={img4} alt="Why us?" />
+                  <div className='p-4'>
+
+                  <p className='m-5'>At Concept Technology and Software Solutions, we don’t just develop software; we help you turn your ideas into reality. Whether you have a clear vision or need guidance on how to transform your business digitally, we are here to make it happen.</p>
+                  <a href="#0" className="butn butn-bg mt-4">
+                                <span>Get Started</span>
+                            </a>
+                  </div>
                 </div>
               </div>
             </div>
