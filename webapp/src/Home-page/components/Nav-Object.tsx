@@ -2,7 +2,7 @@
 import { FcAbout, FcCellPhone, FcNews } from "react-icons/fc";
 import { AiFillProject } from "react-icons/ai";
 
-
+import { FaAppStoreIos } from "react-icons/fa6";
 interface NavItem {
   id: number;
   text: string;
@@ -36,8 +36,8 @@ export const NavObject: NavItem[] = [
     link: '#contact'
   },
   {
-    text: "Project",
-    icon: <AiFillProject />,
+    text: "Apps",
+    icon: <FaAppStoreIos/>,
     id: 3,
     link: '/project'
   },

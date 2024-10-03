@@ -1,5 +1,7 @@
 import pic from '../../assets/Images/pic.jpg'
+import TabsSection from './About'
 import CarouselComponent from './Carousel'
+import ContactForm from './ContactForm'
 
 const HomeApp = () => {
 
@@ -201,113 +203,11 @@ const HomeApp = () => {
             <div className="tabs-section section-padding bg-gray" id='about'>
                 <div className="container">
                     <div className="row">
-                        <ul className="col-md-12 nav nav-pills tabs" id="pills-tab" role="tablist" >
-                            <li className="nav-item one active">
-                                <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">About Us</a>
-                            </li>
-                            <li className="nav-item two">
-                                <a className="nav-link" id="pills-profile-tab" data-toggle="pill" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Our Mission</a>
-                            </li>
-                            <li className="nav-item three">
-                                <a className="nav-link" id="pills-contact-tab" data-toggle="pill" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Why Us?</a>
-                            </li>
+                        <ul className="col-md-12 nav nav-pills tabs">
+                 
                         </ul>
                         
-                        <div className="tab-content col-lg-12" id="pills-tabContent">
-                            <div className="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <div className="row">
-                                    <div className="left col-lg-6">
-                                        <div className="about box-white">
-                                            <h5 className="title">About Us</h5>
-                                            <h6 className="sub-title">Company Overview</h6>
-                                            <p>Concept Technologies and Software Solutions has grown into a leading provider of custom software and technology solutions. We are dedicated to helping businesses navigate the digital landscape, offering services that drive productivity, innovation, and success. Our focus is to build long-term partnerships with clients by delivering solutions that add real value to their business.
-                                            </p>
-                                            <div className="skills mt-40">
-                                                <div className="skill-item mb-30">
-                                                    <h6>Website Design</h6>
-                                                    <div className="skill-progress">
-                                                        <div className="progres" data-value="90%"></div>
-                                                    </div>
-                                                </div>
-                                                <div className="skill-item mb-30">
-                                                    <h6>Branding</h6>
-                                                    <div className="skill-progress">
-                                                        <div className="progres" data-value="75%"></div>
-                                                    </div>
-                                                </div>
-                                                <div className="skill-item">
-                                                    <h6>Software Development</h6>
-                                                    <div className="skill-progress">
-                                                        <div className="progres" data-value="95%"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6 image">
-                                        <div className="img">
-                                            <img src="src/assets/img/2.jpg" alt=""/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <div className="row">
-                                    <div className="left col-lg-6">
-                                        <div className="mission box-white">
-                                            <h5 className="title">Our Mission</h5>
-                                            {/* <h6 className="sub-title">Mission Statement</h6> */}
-                                            <p className="mb-10">
-                                            To empower businesses with cutting-edge technology solutions that foster growth, efficiency, and sustainability.
-                                            </p>
-
-                                            <h5 className="title">Our Vision</h5>
-
-                                            <p>To be the go-to technology partner for businesses, driving transformation and success through innovation and dedication.</p>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6 image">
-                                        <div className="img">
-                                            <img src="/src/assets/img/3.jpg" alt=""/>
-                                            <a className="vid" href="https://vimeo.com/127203262">
-                                                <span className="vid-butn">
-                                                    <i className="fas fa-play-circle"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <div className="row">
-                                    <div className="left col-lg-6">
-                                        <div className="why-us box-white">
-                                            <h5 className="title">Why Choose Us?</h5>
-                                            <h6 className="sub-title"></h6>
-                                            <p> Every solution we create is custom-designed to fit your business needs.</p>
-                                            <ul className="feat mt-30 row">
-                                                <li className="col-sm-4">
-                                                    <span className="icon icon-basic-display"></span>
-                                                    <h6>Tailored Solutions:</h6>
-                                                    <p>We Build tailor-made software solutions designed to meet your specific business needs.</p>
-                                                </li>
-                                                <li className="col-sm-4">
-                                                    <span className="icon icon-basic-picture-multiple"></span>
-                                                    <h6>Expert Team:</h6>
-                                                    <p>With years of experience in the tech industry, our team is equipped to handle projects of any complexity.</p>
-                                                </li>
-                                                <li className="col-sm-4">
-                                                    <span className="icon icon-basic-headset"></span>
-                                                    <h6>Customer-Centric Approach:</h6>
-                                                    <p>Your business goals are at the heart of everything we do.</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>                       
-                                </div>
-                            </div>
-                        </div>
-
+                      <TabsSection/>
                     </div>
                 </div>
             </div>
@@ -334,81 +234,7 @@ const HomeApp = () => {
 
 
 {/* contact session */}
-    <section className="contact section-padding" data-scroll-index="6" id="contact">
-           <div className="container">
-               <div className="row">
-                    <div className="section-head offset-md-2 col-md-8 offset-lg-3 col-lg-6">
-                        <h4>Con<span>tact</span> us</h4>
-                        <p>We're always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Whether you have a question, a project proposal, or just want to say hello, feel free to reach out!</p>
-                    </div>                  
-                    <div className="col-lg-5">
-                        <div className="contact-info mb-md50">
-                            <h5>Contact Me :</h5>
-                            <p>Please fill out the form below, and I'll get back to you as soon as possible.</p>
-                            <div className="item">
-                                <span className="icon icon-basic-tablet"></span>
-                                <div className="cont">
-                                    <h6>Phone : </h6>
-                                    <p>+234 814 300 6319</p>
-                                </div>
-                            </div>
-                            <div className="item">
-                                <span className="icon icon-basic-mail-open-text"></span>
-                                <div className="cont">
-                                    <h6>Email : </h6>
-                                    <p>samuelandrew145@gmail.com</p>
-                                </div>
-                            </div>
-                            <div className="item">
-                                <span className="icon icon-basic-geolocalize-05"></span>
-                                <div className="cont">
-                                    <h6>Address :  </h6>
-                                    <p>No. 160, samuel ladoke akintola boulevard, Garki 2. Abuja</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-lg-7">
-                        <form className="form" id="contact-form" method="post" action="http://innovationplans.com/idesign/coco3/contact.php">
-
-                            <div className="messages"></div>
-
-                            <div className="controls">
-
-                                <div className="row">
-
-                                    <div className="col-md-6">
-                                        <div className="form-group">
-                                            <input id="form_name" type="text" name="name" placeholder="Name" />
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <div className="form-group">
-                                            <input id="form_email" type="email" name="email" placeholder="Email" />
-                                        </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                        <div className="form-group">
-                                            <input id="form_subject" type="text" name="subject" placeholder="Subject" />
-                                        </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                        <div className="form-group">
-                                            <textarea id="form_message" name="message" placeholder="Message" ></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-12">
-                                        <button type="submit" className="butn butn-bg"><span>Send Message</span></button>
-                                    </div>
-                                </div>                             
-                            </div>
-                        </form>
-                    </div>
-               </div>
-           </div>
-       </section>
+ <ContactForm/>
 </>
 )
 }
