@@ -1,25 +1,30 @@
-import { Box, Button, HStack, Icon, List, ListItem } from "@chakra-ui/react"
-import { nav } from "./NavBar"
-import { BsFacebook } from "react-icons/bs"
-import { NavLink } from "react-router-dom"
-interface props {
-    footerItems: nav[]
-}
-const Footer = ({ footerItems }: props) => (
-    <footer>
-        <Box bg={"black"} >
 
-            <Icon as={BsFacebook} boxSize={30} m={5} color={'facebook.300'} />
-            <List>
-                    {footerItems.map(list =>
-                        <HStack m={5} key={list.id}>
-                        <NavLink to={list.link}>
-                                <ListItem key={list.link} p={2} variant={'link'} as={Button}>{list.text}</ListItem>
-                            </NavLink>
-                </HStack>
-                )}
-            </List>
-        </Box>
-    </footer>
+import logo from '../../assets/Images/logo.jpg'
+const Footer = () => {
+return(
+<>
+<footer className="text-center pos-re">
+    <div className="container">
+        
+        <a className="logo" href="#">
+            <img src={logo} alt="logo"/>          
+        </a>
+        
+        <div className="social">
+            <a href="#0"><i className="fab fa-facebook-f"></i></a>
+            <a href="#0"><i className="fab fa-twitter"></i></a>
+            <a href="#0"><i className="fab fa-linkedin-in"></i></a>
+            <a href="#0"><i className="fab fa-behance"></i></a>
+            <a href="#0"><i className="fab fa-pinterest-p"></i></a>
+        </div>
+
+        <p><a target="_blank" href="">Concept Technologies</a></p>
+    </div>
+
+    <div className="curve curve-top curve-center"></div>
+</footer>
+</>
+
 )
+}
 export default Footer
