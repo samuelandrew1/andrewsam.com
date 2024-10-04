@@ -5,6 +5,8 @@ import CarouselComponent from './Carousel'
 import ContactForm from './ContactForm'
 import Footer from './Footer'
 import ImageSection from './ImageSection'
+import NavObject from './Nav-Object'
+import NavBar from './NavBar'
 import ProcessSection from './Process'
 
 const HomeApp = () => {
@@ -12,6 +14,7 @@ const HomeApp = () => {
 
     return (
     <>
+        {/* <NavBar navbar={NavObject}/>     */}
         <CarouselComponent/>
         <ProcessSection/>
         <About_us/>

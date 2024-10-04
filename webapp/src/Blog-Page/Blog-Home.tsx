@@ -1,18 +1,24 @@
-import { Box } from "@chakra-ui/react"
+
 import useNews from "./api-client"
-import BlogCard from "./BlogCard"
+import FeaturedNews from "./FeaturedNews"
+import MenuBar from "./MenuBar"
+
+import BlogSlide from "./SwiperSlide"
 
 
 
 
 export const BlogHome = () => {
   const { data } = useNews()
+
   return (
-    <Box mt={50}>
-      {data.map((news: any) =>
-        <BlogCard cardContents={news} key={news} />
-      )}
-    </Box>
+  <>
+    <MenuBar/>
+    <BlogSlide/>
+    <FeaturedNews/>
+  </>
+
+
   )
 }
 export default BlogHome
