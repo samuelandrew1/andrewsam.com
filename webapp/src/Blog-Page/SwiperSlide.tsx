@@ -1,78 +1,139 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import {
+  Box,
+  Heading,
+  Text,
+  Stack,
+  Grid,
+  Card,
+  CardBody,
+  Image,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./BlogSlide.css";
-
-import 'swiper/css';
-import 'swiper/css/pagination';
-
+import logo from '../assets/Images/logo.jpg'
 const BlogSlide = () => {
   const blogPosts = [
     {
       title: "Post 1",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "https://via.placeholder.com/300",
+      image: logo, // Updated image size for background
     },
     {
       title: "Post 2",
       description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/800x400",
     },
     {
       title: "Post 3",
       description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/800x400",
     },
-    {
-      title: "Post 4",
-      description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-      image: "https://via.placeholder.com/300",
-    },
+
   ];
 
   return (
-    <div className="blog-slider-container">
+    <Box
+      display="flex"
+      flexDirection={{ base: "column", md: "row" }}
+      gap={8}
+      p={6}
+      maxW="1200px"
+      mx="auto"
+    >
       {/* Left Swiper */}
-      <div className="left-slider">
+      <Box
+        flex={{ base: "1", md: "2" }}
+        bg={useColorModeValue("white", "gray.800")}
+        boxShadow="lg"
+        rounded="lg"
+        overflow="hidden"
+        p={4}
+      >
         <Swiper
-          slidesPerView={1} // Show only one slide at a time
+          slidesPerView={1}
           spaceBetween={0}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 5000 }}
+          autoplay={{ delay: 3000 }}
           loop={true}
           modules={[Pagination, Autoplay]}
-          className="swiper-container"
         >
           {blogPosts.map((post, index) => (
             <SwiperSlide key={index}>
-              <div className="slide-content">
-                <img src={post.image} alt={post.title} className="slide-image" />
-                <h2 className="slide-title">{post.title}</h2>
-                <p className="slide-description">{post.description}</p>
-              </div>
+              <Box
+                height="400px"
+                backgroundImage={`url(${post.image})`}
+                backgroundPosition="center"
+                backgroundSize="cover"
+                display="flex"
+                justifyContent="center"
+                alignItems="flex-end" // Moves the text to the bottom
+                color="white"
+                textAlign="center"
+                position="relative"
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  bg: "rgba(0, 0, 0, 0.4)", // Dark overlay
+                  zIndex: 1,
+                  backdropFilter: "blur(5px)", // Adds blur effect
+                }}
+              >
+                <Box zIndex={2} p={4}>
+                  <Heading fontSize="3xl">{post.title}</Heading>
+                  <Text fontSize="lg" mt={2}>
+                    {post.description}
+                  </Text>
+                </Box>
+              </Box>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </Box>
 
-      {/* Right Cards (Top Stories) */}
-      <div className="right-cards">
+      {/* Right Cards (Top Stories in Row) */}
+      <Grid
+        templateColumns={{ base: "1fr", md: "1fr" }}
+        gap={6}
+        flex="1"
+      >
         {blogPosts.map((post, index) => (
-          <div key={index} className="blog-card">
-            <img
+          <Card
+            key={index}
+            direction="row"
+            alignItems="center"
+            bg={useColorModeValue("white", "gray.800")}
+            boxShadow="md"
+            _hover={{ boxShadow: "xl", transform: "scale(1.02)" }}
+            transition="all 0.3s ease"
+            rounded="lg"
+            overflow="hidden"
+          >
+            <Image
               src={post.image}
               alt={post.title}
-              className="blog-card-image"
+              boxSize="150px"
+              objectFit="cover"
             />
-            <div className="blog-card-content">
-              <h4 className="blog-card-title">{post.title}</h4>
-              <p className="blog-card-description">
+            <CardBody p={4}>
+              <Heading fontSize="lg" mb={2}>
+                {post.title}
+              </Heading>
+              <Text fontSize="sm" color={useColorModeValue("gray.600", "gray.400")}>
                 {post.description.slice(0, 50)}...
-              </p>
-            </div>
-          </div>
+              </Text>
+            </CardBody>
+          </Card>
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Box>
   );
 };
 

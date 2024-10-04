@@ -1,9 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Import modules from 'swiper'
-import 'swiper/css'; // Import basic Swiper styles
-import 'swiper/css/pagination'; // Import Pagination styles
-import 'swiper/css/effect-fade'; // Import EffectFade styles
-import './Carousel.css'; // Custom styling
+// import 'swiper/swiper-bundle.min.css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
 import bgImage1 from '../../assets/img/bg1.jpg';
 import bgImage2 from '../../assets/img/bg2.jpg';
 import bgImage3 from '../../assets/img/bg4.jpg';
@@ -22,6 +21,7 @@ const CarouselComponent = () => {
         pagination={{ clickable: true }} // Show pagination dots
         speed={1000} // Adjust the speed
         className="swiper-container"
+        style={{ height: '100vh', width: '100%' }}
       >
         <SwiperSlide>
           <div className="item bg-img" data-overlay-dark="5" style={{ backgroundImage: `url(${bgImage3})` }}>
