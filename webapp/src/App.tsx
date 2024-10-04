@@ -9,6 +9,7 @@ import ExpenseApp from "./ExpenseTraker/components/ExpenseApp";
 import BlogHome from "./Blog-Page/Blog-Home";
 import ProjectHome from "./Home-page/Project-Page/Project-Home";
 import projecObject from "./Home-page/Project-Page/Project-Object";
+import BlogItemDetail from "./Blog-Page/BlogItemDetail";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="project" element={<ProjectHome projectItems={projecObject} />} />
           <Route path="gamehub" element={<GameApp />} />
           <Route path="expenseTracker" element={<ExpenseApp />} />
+          <Route path="/blog/:id/:slug" element={<BlogItemDetail/>} />
         </Routes> 
       </GridItem>  
     </Grid>
