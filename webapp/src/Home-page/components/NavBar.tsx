@@ -170,6 +170,8 @@ const NavBar = ({ navbar }: NavBarProps) => {
                       _placeholder={{ color: "gray.400" }}
                       color="white"
                       bg="#3b3e59"
+                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+
                     />
                     <IconButton
                       aria-label="Submit Search"
