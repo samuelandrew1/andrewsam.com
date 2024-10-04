@@ -14,7 +14,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./BlogSlide.css";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
-import logo from '../assets/Images/logo.jpg';
+import logo from "../assets/Images/logo.jpg";
 
 const BlogSlide = () => {
   const blogPosts = [
@@ -43,7 +43,7 @@ const BlogSlide = () => {
 
   const navigate = useNavigate(); // Hook to navigate to another route
 
-  const handleCardClick = (id:number, slug:string) => {
+  const handleCardClick = (id: number, slug: string) => {
     navigate(`/blog/${id}/${slug}`);
   };
 
@@ -56,7 +56,7 @@ const BlogSlide = () => {
       maxW="1200px"
       mx="auto"
     >
-      {/* Left Swiper */}
+      {/* Left Swiper Section */}
       <Box
         flex={{ base: "1", md: "2" }}
         bg={useColorModeValue("white", "gray.800")}
@@ -112,7 +112,7 @@ const BlogSlide = () => {
         </Swiper>
       </Box>
 
-      {/* Right Cards */}
+      {/* Right Cards Section */}
       <Grid templateColumns={{ base: "1fr", md: "1fr" }} gap={6} flex="1">
         {blogPosts.map((post, index) => (
           <Card

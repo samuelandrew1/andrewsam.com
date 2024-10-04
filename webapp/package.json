@@ -19,7 +19,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.3.3",
     "formik": "^2.4.3",
-    "framer-motion": "^11.9.0",
+    "framer-motion": "^11.11.1",
     "jquery": "^3.7.1",
     "mdb-react-ui-kit": "^8.0.0",
     "react": "^18.2.0",
@@ -30,6 +30,7 @@
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.14.1",
     "react-router-hash-link": "^2.4.3",
+    "react-scroll": "^1.9.0",
     "react-scroll-motion": "^0.3.2",
     "swiper": "^11.1.14",
     "zod": "^3.21.4"
