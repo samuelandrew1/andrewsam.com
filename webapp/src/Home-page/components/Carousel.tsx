@@ -24,9 +24,11 @@ const CarouselComponent = () => {
         style={{ height: '100vh', width: '100%' }}
         
       >
+        <div id='swiper'>
         <SwiperSlide>
+          
           <div className="item bg-img" data-overlay-dark="5" style={{ backgroundImage: `url(${bgImage3})` }} >
-            <div className="text-center v-middle caption mt-30" style={{maxWidth:"1200px" }}>
+            <div className="text-center v-middle caption mt-30" >
               <h4>We</h4>
               <h1>Drive Innovation</h1>
               <div className="row">
@@ -40,10 +42,12 @@ const CarouselComponent = () => {
             </div>
           </div>
         </SwiperSlide>
+        </div>
 
+        <div id='swiper'>
         <SwiperSlide>
           <div className="item bg-img" data-overlay-dark="5" style={{ backgroundImage: `url(${bgImage1})` }}>
-            <div className="text-center v-middle caption mt-30" style={{maxWidth:"1200px" }}>
+            <div className="text-center v-middle caption mt-30" >
               <h4>Empower Businesses</h4>
               <h1>Through Cutting-Edge Technologies</h1>
               <div className="row">
@@ -57,10 +61,12 @@ const CarouselComponent = () => {
             </div>
           </div>
         </SwiperSlide>
+        </div>
 
+        <div id='swiper'>
         <SwiperSlide>
           <div className="item bg-img" data-overlay-dark="5" style={{ backgroundImage: `url(${bgImage2})` }}>
-            <div className="text-center v-middle caption mt-30" style={{maxWidth:"1200px" }}>
+            <div className="text-center v-middle caption mt-30">
               <h4>Transforming Ideas</h4>
               <h1>into Digital Solutions with Advanced Technologies</h1>
               <div className="row">
@@ -74,6 +80,7 @@ const CarouselComponent = () => {
             </div>
           </div>
         </SwiperSlide>
+        </div>
       </Swiper>
     </header>
   );
