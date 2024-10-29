@@ -16,3 +16,4 @@ const ScrolText = ({ heading, content }: props) => {
   )
 }
 export default ScrolText
+

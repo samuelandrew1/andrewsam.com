@@ -1,30 +1,28 @@
-import { Box } from "@chakra-ui/react"
-import Footer from "./Footer"
-import HomePage from "./Home-Page"
-import NavObject from "./Nav-Object"
-import SkillsHeader from "./SkillsHeader"
 
-
-
-
+import About_us from './About_us'
+import BlogSection from './BlogSection'
+import CarouselComponent from './Carousel'
+import ContactForm from './ContactForm'
+import Footer from './Footer'
+import ImageSection from './ImageSection'
+import NavObject from './Nav-Object'
+import NavBar from './NavBar'
+import ProcessSection from './Process'
 
 const HomeApp = () => {
 
+
     return (
-        <Box
-            position={'absolute'}
-            top={1}
-        bgGradient='linear(to-br, #2f304c, #e3d8d8, #b9bcd4,#68333e )'
-        
-        >
-      <SkillsHeader text="WELCOME"/>
-
-
-            <HomePage  />
-            <Footer footerItems={NavObject} />
-
-
-        </Box>
-    )
+    <>
+        {/* <NavBar navbar={NavObject}/>     */}
+        <CarouselComponent/>
+        <ProcessSection/>
+        <About_us/>
+        <ImageSection/>
+        <BlogSection/>
+        <ContactForm/>
+        <Footer/>
+    </>
+)
 }
 export default HomeApp
